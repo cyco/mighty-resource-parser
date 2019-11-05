@@ -12,10 +12,13 @@
 		border-right: 1px solid #a5b0bc;
 
 		> li {
-			display: block;
-			padding: 8px;
-			font-size: 1em;
 			color: rgb(53, 53, 53);
+
+			> a {
+				display: block;
+				padding: 8px;
+				font-size: 1em;
+			}
 
 			&.selected {
 				color: #eee;
