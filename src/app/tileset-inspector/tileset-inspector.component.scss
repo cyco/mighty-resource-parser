@@ -1,0 +1,9 @@
+:host {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+
+	app-palette-image {
+		padding: 1px;
+	}
+}

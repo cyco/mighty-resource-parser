@@ -1,0 +1,10 @@
+<h1>{{resource.path}}</h1>
+<div [ngSwitch]="resource.type">
+	<app-image-inspector [image]="content" *ngSwitchCase="Models.Image"></app-image-inspector>
+	<app-map-inspector [map]="content" [resourceManager]="resourceManager" *ngSwitchCase="Models.Map"></app-map-inspector>
+	<span *ngSwitchCase="Models.Movie">Movie</span>
+	<app-shapesheet-inspector [shapesheet]="content" [resourceManager]="resourceManager" *ngSwitchCase="Models.ShapeSheet"></app-shapesheet-inspector>
+	<app-soundsheet-inspector [soundsheet]="content" *ngSwitchCase="Models.SoundSheet"></app-soundsheet-inspector>
+	<app-tileset-inspector [tileset]="content" [resourceManager]="resourceManager" *ngSwitchCase="Models.TileSheet"></app-tileset-inspector>
+	<span *ngSwitchCase="Models.Unknown">Unknown</span>
+</div>

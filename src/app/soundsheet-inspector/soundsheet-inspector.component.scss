@@ -1,0 +1,26 @@
+@import "../color.scss";
+
+:host {
+	display: flex;
+	flex-direction: row;
+
+	> ul {
+		flex-grow: 0;
+		flex-shrink: 0;
+		overflow-y: auto;
+		background: #ccd2d9;
+		border-right: 1px solid #a5b0bc;
+
+		> li {
+			display: block;
+			padding: 8px;
+			font-size: 1em;
+			color: rgb(53, 53, 53);
+
+			&.selected {
+				color: #eee;
+				background: rgba(0,0,0,.5);
+			}
+		}
+	}
+}

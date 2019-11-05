@@ -1,0 +1,27 @@
+@import "../color.scss";
+
+:host {
+	background: #eff1f5;
+	text-align: center;
+	position: relative;
+	padding: 50px;
+
+	.center-vertically {
+		left: 50%;
+		margin: 0;
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%) translateX(-50%);
+	}
+
+	h1 {
+		font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+		font-size: 2em;
+		text-align: center;
+		text-transform: uppercase;
+		text-rendering: optimizeLegibility;
+		color: lighten(#2c2c2c, 50%);
+		letter-spacing: 0.05em;
+		text-shadow: -2px -2px 1 rgba(0,0,0,70%), 2px 2px 1 rgba(255,255,255,70%);
+	}
+}

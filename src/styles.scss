@@ -1,0 +1,29 @@
+@import "./reset.css";
+@import "./app/color.scss";
+
+body,
+html {
+	margin: 0;
+	padding: 0;
+}
+
+* {
+	box-sizing: border-box;
+	user-select: none;
+	cursor: default;
+}
+
+input:not([type]),
+input[type="text"],
+input[type="number"],
+input[type="search"],
+textarea,
+[contenteditable],
+[contenteditable] * {
+	user-select: text;
+	cursor: initial;
+}
+
+a {
+	cursor: default;
+}

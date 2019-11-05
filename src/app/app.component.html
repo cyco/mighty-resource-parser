@@ -1,0 +1,5 @@
+<app-sidebar (selectResource)="selectResource($event)"></app-sidebar>
+<app-detail *ngIf="!error && !loading && resource" [resource]="resource" [resourceManager]="resourceManager"></app-detail>
+<app-instruction *ngIf="!error && !loading && !resource"></app-instruction>
+<app-detail-loading *ngIf="!error && loading"></app-detail-loading>
+<app-error *ngIf="!loading && error" [error]="error"></app-error>

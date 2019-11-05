@@ -1,0 +1,6 @@
+<div *ngFor="let set of shapesheet.sets">
+	<hr *ngIf="set !== shapesheet.sets[0]">
+	<div>
+		<app-shape-image *ngFor="let shape of set.shapes" [shape]="shape" [palette]="palette"></app-shape-image>
+	</div>
+</div>

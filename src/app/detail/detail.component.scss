@@ -1,0 +1,40 @@
+@import "../color.scss";
+
+:host {
+	background: #eff1f5;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+
+	> h1 {
+		flex-shrink: 0;
+		flex-grow: 0;
+		padding: 20px;
+		font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+		font-size: 1.5em;
+		text-rendering: optimizeLegibility;
+		color: lighten(#2c2c2c, 50%);
+		letter-spacing: 0.05em;
+		text-shadow: -2px -2px 1 rgba(0,0,0,70%), 2px 2px 1 rgba(255,255,255,70%);
+		border-bottom: 1px solid lighten(#2c2c2c, 50%);
+		margin-block-start: 0;
+		margin-block-end: 0;
+		margin-inline-start: 0;
+		margin-inline-end: 0;
+	}
+
+	> *:nth-child(2) {
+		overflow-y: auto;
+		flex-shrink: 1;
+		flex-grow: 1;
+		position: relative;
+
+		> * {
+			position: absolute;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			right: 0;
+		}
+	}
+}

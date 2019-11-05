@@ -1,0 +1,7 @@
+<ul>
+	<li *ngFor="let sound of soundsheet.sounds" [class.selected]="currentSound && sound.id === currentSound.id">
+		<a (click)="selectSound(sound)">{{sound.name}} ({{sound.id}})</a>
+	</li>
+</ul>
+<app-sound-inspector *ngIf="soundsheet && soundsheet.sounds && currentSound" [soundData]="currentSoundData" [soundName]="currentSound.name" [soundId]="currentSound.id">
+</app-sound-inspector>

@@ -1,0 +1,16 @@
+:host {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-grow: 1;
+	flex-shrink: 0;
+
+	> div > div:nth-child(2) {
+		margin-top: 15px;
+	}
+
+
+&:focus {
+	outline: none;
+}
+}
