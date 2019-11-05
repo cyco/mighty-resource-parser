@@ -11,7 +11,7 @@ import { TileSheet } from "src/mighty-data/models/tile-sheet";
 import { Image } from "src/mighty-data/models/image";
 import { Map } from "src/mighty-data/models/map";
 import { ResourceManager } from "src/mighty-data/resource-manager";
-import { Parser } from "src/mighty-data/parser/parser";
+import { Parser } from "src/mighty-data/parser";
 
 @Component({
   selector: "app-map-inspector",

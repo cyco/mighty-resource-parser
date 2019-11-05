@@ -1,7 +1,7 @@
 import { Component, Input } from "@angular/core";
 import { Resource } from "src/mighty-data/resource";
 import { ResourceManager } from "src/mighty-data/resource-manager";
-import { Parser } from "src/mighty-data/parser/parser";
+import { Parser } from "src/mighty-data/parser";
 import * as Models from "src/mighty-data/models";
 
 @Component({

@@ -2,7 +2,7 @@ import { Component, Input, OnChanges } from "@angular/core";
 import { ShapeSheet } from "src/mighty-data/models/shape-sheet";
 import { Image } from "src/mighty-data/models/image";
 import { ResourceManager } from "src/mighty-data/resource-manager";
-import { Parser } from "src/mighty-data/parser/parser";
+import { Parser } from "src/mighty-data/parser";
 
 @Component({
   selector: "app-shapesheet-inspector",
