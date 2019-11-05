@@ -1,5 +1,6 @@
 import { InputStream } from "src/util";
 import { Image } from "src/mighty-data/models";
+import { Resource } from "../resource";
 
 const { floor } = Math;
 
@@ -18,7 +19,7 @@ const fixUpColorPalette = (buffer: Uint8Array, bpc: number = 6) => {
   return colorPalette;
 };
 
-export default (input: InputStream): Image => {
+export default (_: Resource, input: InputStream): Image => {
   const colorPalette = fixUpColorPalette(input.getUint8Array(0x600));
   const width = input.getUint16();
   const height = input.getUint16();

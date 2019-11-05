@@ -2,7 +2,7 @@ import { TileSheet } from "../models";
 import { InputStream } from "src/util";
 import { Resource } from "../resource";
 
-export default (resource: Resource, input: InputStream) => {
+export default (_: Resource, input: InputStream) => {
   const intro = input.getUint16Array(4);
   const pixelsOffset = input.getUint16() + 2;
   const offset2Garbage = input.getUint16();
