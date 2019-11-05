@@ -34,7 +34,11 @@ export default function sndToWav(
   assert(input.getUint16() === 5, "Only sampeld sound can be decoded");
 
   opts = input.getUint32();
-  assert(opts == 0x80 || opts == 0xa0, "Unhandled options in %2x", opts);
+  assert(
+    opts === 0x80 || opts === 0xa0 || opts === 0x3a0,
+    "Unhandled options in %2x",
+    opts
+  );
 
   assert(input.getUint16() === 1, "Too many commands");
   assert(input.getUint16() === 0x8051, "Not a buffer command");
@@ -57,7 +61,7 @@ export default function sndToWav(
 
   baseFrequency = input.getUint8();
   assert(
-    baseFrequency === 0x3c,
+    baseFrequency === 0x3c || baseFrequency === 0x3b || baseFrequency === 0x48,
     "Weird base frequency %d encountered",
     baseFrequency
   );
