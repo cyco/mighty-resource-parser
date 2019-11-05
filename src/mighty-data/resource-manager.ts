@@ -9,9 +9,11 @@ import { SoundSheet } from "./models";
 @Injectable({ providedIn: "root" })
 export class ResourceManager {
   private cache: Map<string, Resource> = new Map();
-  private typeDetector = new TypeDetector();
 
-  constructor(private httpClient: HttpClient) {}
+  constructor(
+    private httpClient: HttpClient,
+    private typeDetector: TypeDetector
+  ) {}
 
   get(path: string): Observable<Resource> {
     if (this.cache.has(path)) {
@@ -19,18 +21,15 @@ export class ResourceManager {
     }
 
     const type = this.typeDetector.detect(path);
-    return this.httpClient
-      .get(
-        [
-          "assets",
-          "Data",
-          path + (type === SoundSheet ? "@rsrc-fork" : "")
-        ].join("/"),
-        { responseType: "arraybuffer" }
-      )
-      .pipe(
-        map(c => new Resource(path, c, type)),
-        map(resource => (this.cache.set(path, resource), resource))
-      );
+    const url = [
+      "assets",
+      "Data",
+      path + (type === SoundSheet ? "@rsrc-fork" : "")
+    ].join("/");
+
+    return this.httpClient.get(url, { responseType: "arraybuffer" }).pipe(
+      map(c => new Resource(path, c, type)),
+      map(resource => (this.cache.set(path, resource), resource))
+    );
   }
 }
