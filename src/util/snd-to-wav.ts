@@ -9,6 +9,7 @@ function assert(expr: boolean, message: string, ...rest: any[]) {
   if (!expr) throw fault(message, ...rest);
 }
 
+// Ported to typescript from https://github.com/Hopper262/classic-mac-utils/blob/master/snd2wav.pl
 export default function sndToWav(
   snd: ArrayBuffer | Uint8Array | string | SharedArrayBuffer
 ): ArrayBuffer {
