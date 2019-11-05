@@ -11,7 +11,7 @@ function assert(expr: boolean, message: string, ...rest: any[]) {
 
 export default function sndToWav(
   snd: ArrayBuffer | Uint8Array | string | SharedArrayBuffer
-) {
+): ArrayBuffer {
   const input = new InputStream(
     snd instanceof Uint8Array ? snd.slice().buffer : snd
   );
