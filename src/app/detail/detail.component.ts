@@ -14,14 +14,13 @@ export class DetailComponent {
   @Input()
   public resourceManager: ResourceManager;
 
-  private _resource: Resource;
+  private _resource: any;
   public content: any;
-  public parser: Parser = new Parser();
 
   @Input()
   public set resource(r) {
-    this._resource = r;
-    this.content = this.parser.parse(this._resource, this.resourceManager);
+    this._resource = { type: r.constructor };
+    this.content = r;
   }
 
   public get resource() {

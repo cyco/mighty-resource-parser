@@ -27,7 +27,6 @@ export class MapInspectorComponent implements OnChanges {
   public tilesheet: TileSheet;
   @Input()
   public palette: Uint32Array;
-  public parser: Parser = new Parser();
 
   @ViewChild("canvas", { static: false })
   canvas: ElementRef<HTMLCanvasElement>;
@@ -38,13 +37,10 @@ export class MapInspectorComponent implements OnChanges {
     if ("map" in changes) {
       this.resourceManager.get(this.map.tilesheetSource).subscribe(
         this.runHack(ts => {
-          this.tilesheet = this.parser.parse(ts, this.resourceManager);
+          this.tilesheet = ts;
           this.resourceManager.get(this.tilesheet.paletteSource).subscribe(
             this.runHack(image => {
-              this.palette = this.parser.parse(
-                image,
-                this.resourceManager
-              ).palette;
+              this.palette = image.palette;
               this.redraw();
             })
           );

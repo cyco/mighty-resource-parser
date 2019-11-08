@@ -17,7 +17,6 @@ export class TilesetInspectorComponent implements OnChanges {
 
   public palette: Uint32Array;
   private currentPaletteSource: string;
-  public parser: Parser = new Parser();
 
   ngOnChanges() {
     if (!this.tileset) return;
@@ -26,8 +25,7 @@ export class TilesetInspectorComponent implements OnChanges {
         .get(this.tileset.paletteSource)
         .subscribe(resource => {
           this.currentPaletteSource = this.tileset.paletteSource;
-          const x: Image = this.parser.parse(resource, this.resourceManager);
-          this.palette = x.palette;
+          this.palette = resource.palette;
         });
     }
   }

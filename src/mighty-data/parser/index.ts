@@ -14,8 +14,11 @@ import parseTileset from "./parse-tileset";
 import parseSoundSheet from "./parse-sound-sheet";
 import parseShapeSheet from "./parse-shape-sheet";
 import unpack from "./unpack";
+import { Injectable } from "@angular/core";
 
 type ModelParser = (resource: Resource, input: InputStream) => any;
+
+@Injectable({ providedIn: "root" })
 export class Parser {
   private parsers = new Map<any, ModelParser>([
     [TileSheet, parseTileset],
