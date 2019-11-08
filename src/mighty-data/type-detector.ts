@@ -15,7 +15,11 @@ export class TypeDetector {
   };
 
   public detect(file: string) {
-    const [, extension] = file.split(".");
+    const [name, extension] = file.split(".");
+
+    if (name === "Audio/Music") {
+      return SoundSheet;
+    }
 
     return this.extensionMap[extension.toLowerCase()] || null;
   }
