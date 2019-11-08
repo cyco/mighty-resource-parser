@@ -3,7 +3,8 @@ import {
   Input,
   ViewChild,
   ElementRef,
-  AfterViewInit
+  AfterViewInit,
+  OnDestroy
 } from "@angular/core";
 import * as WaveSurfer from "wavesurfer.js";
 import { sndToWav } from "src/util";
@@ -14,7 +15,7 @@ import { sndToWav } from "src/util";
   styleUrls: ["./sound-inspector.component.scss"],
   host: { tabIndex: "0", "(keydown.space)": "togglePlayback()" }
 })
-export class SoundInspectorComponent implements AfterViewInit {
+export class SoundInspectorComponent implements AfterViewInit, OnDestroy {
   @Input()
   public soundName: string;
   @Input()
@@ -41,6 +42,13 @@ export class SoundInspectorComponent implements AfterViewInit {
     });
 
     this.reloadSound();
+  }
+
+  ngOnDestroy() {
+    if (!this.wavesurfer) return;
+    this.wavesurfer.stop();
+    this.wavesurfer.destroy();
+    this.wavesurfer = null;
   }
 
   @Input()
