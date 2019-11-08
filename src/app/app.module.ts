@@ -9,14 +9,14 @@ import { DetailComponent } from "./detail/detail.component";
 import { InstructionComponent } from "./instruction/instruction.component";
 import { DetailLoadingComponent } from "./detail-loading/detail-loading.component";
 import { ErrorComponent } from "./error/error.component";
-import { ImageInspectorComponent } from './image-inspector/image-inspector.component';
-import { PaletteImageComponent } from './palette-image/palette-image.component';
-import { SoundsheetInspectorComponent } from './soundsheet-inspector/soundsheet-inspector.component';
-import { SoundInspectorComponent } from './sound-inspector/sound-inspector.component';
-import { ShapesheetInspectorComponent } from './shapesheet-inspector/shapesheet-inspector.component';
-import { ShapeImageComponent } from './shape-image/shape-image.component';
-import { TilesetInspectorComponent } from './tileset-inspector/tileset-inspector.component';
-import { MapInspectorComponent } from './map-inspector/map-inspector.component';
+import { ImageInspectorComponent } from "./image-inspector/image-inspector.component";
+import { PaletteImageComponent } from "./palette-image/palette-image.component";
+import { SoundsheetInspectorComponent } from "./soundsheet-inspector/soundsheet-inspector.component";
+import { SoundInspectorComponent } from "./sound-inspector/sound-inspector.component";
+import { ShapesheetInspectorComponent } from "./shapesheet-inspector/shapesheet-inspector.component";
+import { ShapeImageComponent } from "./shape-image/shape-image.component";
+import { TilesetInspectorComponent } from "./tileset-inspector/tileset-inspector.component";
+import { MapInspectorComponent } from "./map-inspector/map-inspector.component";
 
 @NgModule({
   declarations: [

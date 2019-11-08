@@ -1,16 +1,15 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { ShapeImageComponent } from './shape-image.component';
+import { ShapeImageComponent } from "./shape-image.component";
 
-describe('ShapeImageComponent', () => {
+describe("ShapeImageComponent", () => {
   let component: ShapeImageComponent;
   let fixture: ComponentFixture<ShapeImageComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ShapeImageComponent ]
-    })
-    .compileComponents();
+      declarations: [ShapeImageComponent]
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -19,7 +18,7 @@ describe('ShapeImageComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

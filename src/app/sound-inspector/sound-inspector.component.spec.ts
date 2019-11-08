@@ -1,16 +1,15 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { SoundInspectorComponent } from './sound-inspector.component';
+import { SoundInspectorComponent } from "./sound-inspector.component";
 
-describe('SoundInspectorComponent', () => {
+describe("SoundInspectorComponent", () => {
   let component: SoundInspectorComponent;
   let fixture: ComponentFixture<SoundInspectorComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SoundInspectorComponent ]
-    })
-    .compileComponents();
+      declarations: [SoundInspectorComponent]
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -19,7 +18,7 @@ describe('SoundInspectorComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

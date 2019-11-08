@@ -1,16 +1,15 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { PaletteImageComponent } from './palette-image.component';
+import { PaletteImageComponent } from "./palette-image.component";
 
-describe('PaletteImageComponent', () => {
+describe("PaletteImageComponent", () => {
   let component: PaletteImageComponent;
   let fixture: ComponentFixture<PaletteImageComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PaletteImageComponent ]
-    })
-    .compileComponents();
+      declarations: [PaletteImageComponent]
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -19,7 +18,7 @@ describe('PaletteImageComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

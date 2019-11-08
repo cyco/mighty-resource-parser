@@ -1,16 +1,15 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { ShapesheetInspectorComponent } from './shapesheet-inspector.component';
+import { ShapesheetInspectorComponent } from "./shapesheet-inspector.component";
 
-describe('ShapesheetInspectorComponent', () => {
+describe("ShapesheetInspectorComponent", () => {
   let component: ShapesheetInspectorComponent;
   let fixture: ComponentFixture<ShapesheetInspectorComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ShapesheetInspectorComponent ]
-    })
-    .compileComponents();
+      declarations: [ShapesheetInspectorComponent]
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -19,7 +18,7 @@ describe('ShapesheetInspectorComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

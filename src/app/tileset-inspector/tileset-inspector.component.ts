@@ -1,8 +1,6 @@
 import { Component, OnChanges, Input } from "@angular/core";
 import { TileSheet } from "src/mighty-data/models/tile-sheet";
 import { ResourceManager } from "src/mighty-data/resource-manager";
-import { Parser } from "src/mighty-data/parser";
-import { Image } from "src/mighty-data/models/image";
 
 @Component({
   selector: "app-tileset-inspector",
