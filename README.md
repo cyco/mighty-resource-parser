@@ -1,27 +1,40 @@
-# Viewer
+# Mighty Resource Viewer
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.14.
+An app used to unpack and preview the game files used by _Power Pete_ and _Mighty Mike_.
 
-## Development server
+## Instructions
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+```sh
+# Clone repository
+$ git clone ...
 
-## Code scaffolding
+# Install dependencies
+$ cd mighty-resource-viewer
+$ yarn install
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+# Start local server
+$ yarn start
 
-## Build
+# Then, copy your game files into src/assets/Data/
+# and navigate to http://localhost:4200/ in your browser
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## To do list
 
-## Running unit tests
+-   [ ] Convert compressed `snd` resources to a playable format
+    -   See <https://ffmpeg.org/doxygen/3.1/mace_8c_source.html> for an implementation of the MACE 3:1 algorithm used to compress the music tracks and some sound effects
+-   [ ] Show items in map viewer
+-   [ ] Decode tile animations and add a way to preview them
+-   [ ] Implement LZSS to unpack the spin animation
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Screenshots
 
-## Running end-to-end tests
+![](./docs/audio.png)
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+![](./docs/image.png)
 
-## Further help
+![](./docs/map.png)
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+![](./docs/shapes.png)
+
+![](./docs/tileset.png)
