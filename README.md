@@ -1,12 +1,12 @@
 # Mighty Resource Viewer
 
-An app used to unpack and preview the game files used by _Power Pete_ and _Mighty Mike_.
+A web app used to unpack and preview the game files used by _Power Pete_ and _Mighty Mike_.
 
 ## Instructions
 
 ```sh
 # Clone repository
-$ git clone ...
+$ git clone https://github.com/cyco/mighty-resource-parser.git
 
 # Install dependencies
 $ cd mighty-resource-viewer
