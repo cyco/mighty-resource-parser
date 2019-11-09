@@ -30,9 +30,10 @@ export class Parser {
 
   public parse(resource: Resource, _: ResourceManager): any {
     const parse = this.parsers.get(resource.type);
-    let input = new InputStream(resource.contents, Stream.Endian.Big);
+    let input = new InputStream(resource.data, Stream.Endian.Big);
     input = parse !== parseSoundSheet ? unpack(input) : input;
 
-    return parse(resource, input);
+    resource.contents = parse(resource, input);
+    return resource;
   }
 }

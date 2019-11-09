@@ -1,6 +1,7 @@
 import { Component, Input } from "@angular/core";
 import { ResourceManager } from "src/mighty-data/resource-manager";
 import * as Models from "src/mighty-data/models";
+import { faFile } from "@fortawesome/free-regular-svg-icons";
 
 @Component({
   selector: "app-detail",
@@ -11,17 +12,7 @@ export class DetailComponent {
   public Models = Models;
   @Input()
   public resourceManager: ResourceManager;
-
-  private _resource: any;
-  public content: any;
-
   @Input()
-  public set resource(r) {
-    this._resource = { type: r.constructor };
-    this.content = r;
-  }
-
-  public get resource() {
-    return this._resource;
-  }
+  public resource: any;
+  public fileIcon: any = faFile;
 }

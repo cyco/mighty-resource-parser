@@ -23,7 +23,7 @@ export class TilesetInspectorComponent implements OnChanges {
         .get(this.tileset.paletteSource)
         .subscribe(resource => {
           this.currentPaletteSource = this.tileset.paletteSource;
-          this.palette = resource.palette;
+          this.palette = resource.contents.palette;
         });
     }
   }

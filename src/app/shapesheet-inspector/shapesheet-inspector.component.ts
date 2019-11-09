@@ -23,7 +23,7 @@ export class ShapesheetInspectorComponent implements OnChanges {
         .get(this.shapesheet.paletteSource)
         .subscribe(resource => {
           this.currentPaletteSource = this.shapesheet.paletteSource;
-          this.palette = resource.palette;
+          this.palette = resource.contents.palette;
         });
     }
   }

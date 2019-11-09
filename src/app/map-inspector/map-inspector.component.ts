@@ -35,10 +35,10 @@ export class MapInspectorComponent implements OnChanges {
     if ("map" in changes) {
       this.resourceManager.get(this.map.tilesheetSource).subscribe(
         this.runHack(ts => {
-          this.tilesheet = ts;
+          this.tilesheet = ts.contents;
           this.resourceManager.get(this.tilesheet.paletteSource).subscribe(
             this.runHack(image => {
-              this.palette = image.palette;
+              this.palette = image.contents.palette;
               this.redraw();
             })
           );

@@ -30,7 +30,7 @@ export class ResourceManager {
     ].join("/");
 
     return this.httpClient.get(url, { responseType: "arraybuffer" }).pipe(
-      map(c => new Resource(path, c, type)),
+      map(c => new Resource(path, c.slice(0), type)),
       map(r => this.parser.parse(r, this)),
       map(resource => (this.cache.set(path, resource), resource))
     );

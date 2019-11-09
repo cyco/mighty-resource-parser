@@ -1,3 +1,5 @@
+@import "../color.scss";
+
 :host {
 	display: flex;
 	align-items: center;
@@ -7,6 +9,21 @@
 
 	> div > div:nth-child(2) {
 		margin-top: 15px;
+	}
+
+	> div > div:nth-child(3) {
+		margin-top: 10px;
+	}
+
+	a {
+		font-size: 0.9em;
+		cursor: pointer;
+		transition: all 0.1s ease-in-out;
+
+		&:hover {
+			text-decoration: underline;
+			color: $charcoal;
+		}
 	}
 
 	&:focus {

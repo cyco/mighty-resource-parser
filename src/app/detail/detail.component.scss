@@ -21,6 +21,10 @@
 		margin-block-end: 0;
 		margin-inline-start: 0;
 		margin-inline-end: 0;
+
+		> fa-icon {
+			margin-right: 0.5em;
+		}
 	}
 
 	> *:nth-child(2) {
