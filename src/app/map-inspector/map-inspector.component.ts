@@ -6,15 +6,15 @@ import {
   NgZone,
   ViewChild,
   ElementRef
-} from "@angular/core";
-import { TileSheet } from "src/mighty-data/models/tile-sheet";
-import { Map } from "src/mighty-data/models/map";
-import { ResourceManager } from "src/mighty-data/resource-manager";
+} from '@angular/core';
+import { TileSheet } from 'src/mighty-data/models/tile-sheet';
+import { Map } from 'src/mighty-data/models/map';
+import { ResourceManager } from 'src/mighty-data/resource-manager';
 
 @Component({
-  selector: "app-map-inspector",
-  templateUrl: "./map-inspector.component.html",
-  styleUrls: ["./map-inspector.component.scss"]
+  selector: 'app-map-inspector',
+  templateUrl: './map-inspector.component.html',
+  styleUrls: ['./map-inspector.component.scss']
 })
 export class MapInspectorComponent implements OnChanges {
   @Input()
@@ -26,13 +26,13 @@ export class MapInspectorComponent implements OnChanges {
   @Input()
   public palette: Uint32Array;
 
-  @ViewChild("canvas")
+  @ViewChild('canvas')
   canvas: ElementRef<HTMLCanvasElement>;
   public context: CanvasRenderingContext2D;
   constructor(private zone: NgZone) {}
 
   ngOnChanges(changes: SimpleChanges) {
-    if ("map" in changes) {
+    if ('map' in changes) {
       this.resourceManager.get(this.map.tilesheetSource).subscribe(
         this.runHack(ts => {
           this.tilesheet = ts.contents;
@@ -46,7 +46,7 @@ export class MapInspectorComponent implements OnChanges {
       );
     }
 
-    if (!this.context) return;
+    if (!this.context) { return; }
     this.redraw();
   }
 
@@ -55,19 +55,19 @@ export class MapInspectorComponent implements OnChanges {
   }
 
   ngAfterViewInit(): void {
-    this.context = this.canvas.nativeElement.getContext("2d");
+    this.context = this.canvas.nativeElement.getContext('2d');
     this.redraw();
   }
 
   private redraw() {
     const { palette, map, tilesheet } = this;
-    if (!palette || !map || !tilesheet) return;
+    if (!palette || !map || !tilesheet) { return; }
 
     this.context.putImageData(this.draw(map), 0, 0);
   }
 
   draw(map: Map) {
-    console.log("draw");
+    console.log('draw');
 
     const TileWidth = 32;
     const TileHeight = 32;
@@ -88,9 +88,10 @@ export class MapInspectorComponent implements OnChanges {
       for (let x = 0; x < ZoneWidth; x++) {
         const tileId = map.tiles[y * ZoneWidth + x];
         const pixels = this.tilesheet.tiles[tileId];
-        if (!pixels)
-          console.log("Tile", tileId, "of", this.tilesheet.tiles.length);
-        if (!pixels) continue;
+        if (!pixels) {
+          console.log('Tile', tileId, 'of', this.tilesheet.tiles.length);
+        }
+        if (!pixels) { continue; }
 
         const sy = y * TileHeight;
         const sx = x * TileWidth;

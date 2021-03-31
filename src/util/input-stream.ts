@@ -1,6 +1,6 @@
-import Stream from "./stream";
+import Stream from './stream';
 
-const DefaultEncoding = "utf-8";
+const DefaultEncoding = 'utf-8';
 
 class InputStream extends Stream {
   private _arrayBuffer: ArrayBuffer | SharedArrayBuffer;
@@ -28,11 +28,11 @@ class InputStream extends Stream {
   private _makeArrayBuffer(
     data: ArrayBuffer | SharedArrayBuffer | string
   ): ArrayBuffer | SharedArrayBuffer {
-    if (typeof data === "string") {
+    if (typeof data === 'string') {
       const binaryString = atob(data);
       const len = binaryString.length;
       const bytes = new Uint8Array(len);
-      for (let i = 0; i < len; i++) bytes[i] = binaryString.charCodeAt(i);
+      for (let i = 0; i < len; i++) { bytes[i] = binaryString.charCodeAt(i); }
 
       return bytes.buffer;
     }
@@ -96,7 +96,7 @@ class InputStream extends Stream {
   }
 
   getCharacters(length: number, encoding: string = DefaultEncoding): string {
-    if (length === 0) return "";
+    if (length === 0) { return ''; }
 
     const data = new Uint8Array(this._arrayBuffer, this._offset, length);
     this._offset += length;
@@ -111,7 +111,7 @@ class InputStream extends Stream {
   ): string {
     const raw = this.getUint8Array(fixedLength);
     let length = 0;
-    while (length < raw.length && raw[length] !== 0) length++;
+    while (length < raw.length && raw[length] !== 0) { length++; }
 
     const decoder = new TextDecoder(encoding);
     return decoder.decode(raw.slice(0, length));
@@ -128,7 +128,7 @@ class InputStream extends Stream {
     );
 
     let length = -1;
-    while (uint8Array[++length]) true /* nop */;
+    while (uint8Array[++length]) { true /* nop */; }
 
     return this.getCharacters(length, encoding);
   }

@@ -4,12 +4,12 @@ import {
   ViewChild,
   AfterViewInit,
   Input
-} from "@angular/core";
+} from '@angular/core';
 
 @Component({
-  selector: "app-palette-image",
-  templateUrl: "./palette-image.component.html",
-  styleUrls: ["./palette-image.component.scss"]
+  selector: 'app-palette-image',
+  templateUrl: './palette-image.component.html',
+  styleUrls: ['./palette-image.component.scss']
 })
 export class PaletteImageComponent implements AfterViewInit {
   @Input()
@@ -22,23 +22,23 @@ export class PaletteImageComponent implements AfterViewInit {
   public pixels: Uint8Array;
   @Input()
   public mask: Uint8Array;
-  @ViewChild("canvas")
+  @ViewChild('canvas')
   canvas: ElementRef<HTMLCanvasElement>;
   public context: CanvasRenderingContext2D;
 
   ngAfterViewInit(): void {
-    this.context = this.canvas.nativeElement.getContext("2d");
+    this.context = this.canvas.nativeElement.getContext('2d');
     this.redraw();
   }
 
   ngOnChanges() {
-    if (!this.context) return;
+    if (!this.context) { return; }
     this.redraw();
   }
 
   private redraw() {
     const { width, height, pixels, palette, mask } = this;
-    if (!width || !height || !pixels || !palette) return;
+    if (!width || !height || !pixels || !palette) { return; }
 
     this.canvas.nativeElement.width = width;
     this.canvas.nativeElement.height = height;

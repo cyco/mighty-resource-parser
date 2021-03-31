@@ -1,4 +1,4 @@
-import { ShapeSet } from "./shape-set";
+import { ShapeSet } from './shape-set';
 
 export class ShapeSheet {
   sets: ShapeSet[];

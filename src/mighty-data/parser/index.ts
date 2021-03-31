@@ -1,24 +1,24 @@
-import { Resource } from "../resource";
-import { ResourceManager } from "../resource-manager";
+import { Resource } from '../resource';
+import { ResourceManager } from '../resource-manager';
 import {
   Image,
   SoundSheet,
   ShapeSheet,
   TileSheet,
   Map as MapModel
-} from "../models";
-import { Stream, InputStream } from "src/util";
-import parseImage from "./parse-image";
-import parseMap from "./parse-map";
-import parseTileset from "./parse-tileset";
-import parseSoundSheet from "./parse-sound-sheet";
-import parseShapeSheet from "./parse-shape-sheet";
-import unpack from "./unpack";
-import { Injectable } from "@angular/core";
+} from '../models';
+import { Stream, InputStream } from 'src/util';
+import parseImage from './parse-image';
+import parseMap from './parse-map';
+import parseTileset from './parse-tileset';
+import parseSoundSheet from './parse-sound-sheet';
+import parseShapeSheet from './parse-shape-sheet';
+import unpack from './unpack';
+import { Injectable } from '@angular/core';
 
 type ModelParser = (resource: Resource, input: InputStream) => any;
 
-@Injectable({ providedIn: "root" })
+@Injectable({ providedIn: 'root' })
 export class Parser {
   private parsers = new Map<any, ModelParser>([
     [TileSheet, parseTileset],

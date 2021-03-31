@@ -1,8 +1,8 @@
-import { ComponentFixture, TestBed, waitForAsync } from "@angular/core/testing";
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
-import { ShapesheetInspectorComponent } from "./shapesheet-inspector.component";
+import { ShapesheetInspectorComponent } from './shapesheet-inspector.component';
 
-describe("ShapesheetInspectorComponent", () => {
+describe('ShapesheetInspectorComponent', () => {
   let component: ShapesheetInspectorComponent;
   let fixture: ComponentFixture<ShapesheetInspectorComponent>;
 
@@ -18,7 +18,7 @@ describe("ShapesheetInspectorComponent", () => {
     fixture.detectChanges();
   });
 
-  it("should create", () => {
+  it('should create', () => {
     expect(component).toBeTruthy();
   });
 });

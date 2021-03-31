@@ -1,10 +1,10 @@
-import { Component, Input } from "@angular/core";
-import { Image } from "src/mighty-data/models/image";
+import { Component, Input } from '@angular/core';
+import { Image } from 'src/mighty-data/models/image';
 
 @Component({
-  selector: "app-image-inspector",
-  templateUrl: "./image-inspector.component.html",
-  styleUrls: ["./image-inspector.component.scss"]
+  selector: 'app-image-inspector',
+  templateUrl: './image-inspector.component.html',
+  styleUrls: ['./image-inspector.component.scss']
 })
 export class ImageInspectorComponent {
   @Input()

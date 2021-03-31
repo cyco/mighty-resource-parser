@@ -1,8 +1,8 @@
-import { ComponentFixture, TestBed, waitForAsync } from "@angular/core/testing";
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
-import { SoundInspectorComponent } from "./sound-inspector.component";
+import { SoundInspectorComponent } from './sound-inspector.component';
 
-describe("SoundInspectorComponent", () => {
+describe('SoundInspectorComponent', () => {
   let component: SoundInspectorComponent;
   let fixture: ComponentFixture<SoundInspectorComponent>;
 
@@ -18,7 +18,7 @@ describe("SoundInspectorComponent", () => {
     fixture.detectChanges();
   });
 
-  it("should create", () => {
+  it('should create', () => {
     expect(component).toBeTruthy();
   });
 });

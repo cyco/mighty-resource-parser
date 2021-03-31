@@ -1,13 +1,13 @@
-import { Resource } from "./resource";
-import { HttpClient } from "@angular/common/http";
-import { Observable, of } from "rxjs";
-import { map } from "rxjs/operators";
-import { Injectable } from "@angular/core";
-import { TypeDetector } from "./type-detector";
-import { SoundSheet } from "./models";
-import { Parser } from "./parser";
+import { Resource } from './resource';
+import { HttpClient } from '@angular/common/http';
+import { Observable, of } from 'rxjs';
+import { map } from 'rxjs/operators';
+import { Injectable } from '@angular/core';
+import { TypeDetector } from './type-detector';
+import { SoundSheet } from './models';
+import { Parser } from './parser';
 
-@Injectable({ providedIn: "root" })
+@Injectable({ providedIn: 'root' })
 export class ResourceManager {
   private cache: Map<string, any> = new Map();
 
@@ -24,12 +24,12 @@ export class ResourceManager {
 
     const type = this.typeDetector.detect(path);
     const url = [
-      "assets",
-      "Data",
-      path + (type === SoundSheet ? "@rsrc-fork" : "")
-    ].join("/");
+      'assets',
+      'Data',
+      path + (type === SoundSheet ? '@rsrc-fork' : '')
+    ].join('/');
 
-    return this.httpClient.get(url, { responseType: "arraybuffer" }).pipe(
+    return this.httpClient.get(url, { responseType: 'arraybuffer' }).pipe(
       map(c => new Resource(path, c.slice(0), type)),
       map(r => this.parser.parse(r, this)),
       map(resource => (this.cache.set(path, resource), resource))

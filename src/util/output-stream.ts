@@ -1,4 +1,4 @@
-import Stream from "./stream";
+import Stream from './stream';
 
 class OutputStream extends Stream {
   private _arrayBuffer: ArrayBuffer;

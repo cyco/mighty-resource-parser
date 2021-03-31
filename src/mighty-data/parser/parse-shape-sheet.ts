@@ -1,18 +1,18 @@
-import { ShapeSheet, Shape, ShapeSet } from "../models";
-import { Stream, InputStream } from "src/util";
-import { Resource } from "../resource";
+import { ShapeSheet, Shape, ShapeSet } from '../models';
+import { Stream, InputStream } from 'src/util';
+import { Resource } from '../resource';
 
 const determinePaletteSourceForShapes = (path: string) => {
   switch (path) {
-    case "Shapes/OverheadMap.shapes":
-      return "Images/OverheadMap.image";
-    case "Shapes/title.shapes":
-      return "Images/titlepage.image";
-    case "Shapes/view.shapes":
-      return "Images/ViewPPC.image";
-      return "Images/Head.image";
+    case 'Shapes/OverheadMap.shapes':
+      return 'Images/OverheadMap.image';
+    case 'Shapes/title.shapes':
+      return 'Images/titlepage.image';
+    case 'Shapes/view.shapes':
+      return 'Images/ViewPPC.image';
+      return 'Images/Head.image';
     default:
-      return "Images/Border.image";
+      return 'Images/Border.image';
   }
 };
 
@@ -42,7 +42,7 @@ const parseShape = (input: InputStream, base: number): Shape => {
   if (maskShift != 0) {
     input.seek(maskOffset, Stream.Seek.Set);
     shape.mask = input.getUint8Array(size);
-  } else shape.mask = new Uint8Array(size);
+  } else { shape.mask = new Uint8Array(size); }
   input.seek(offset, Stream.Seek.Set);
   return shape;
 };
@@ -50,7 +50,7 @@ const parseShape = (input: InputStream, base: number): Shape => {
 const parseShapeSet = (input: InputStream) => {
   const offset = input.offset;
 
-  let shapeSheet = new ShapeSet();
+  const shapeSheet = new ShapeSet();
   shapeSheet.unknown1 = input.getUint8();
   shapeSheet.unknown2 = input.getUint8();
   shapeSheet.ten = input.getUint32();
@@ -76,7 +76,7 @@ export default (resource: Resource, input: InputStream) => {
   }
 
   const sets = [];
-  for (let offset of offsets) {
+  for (const offset of offsets) {
     input.seek(offset, Stream.Seek.Set);
     sets.push(parseShapeSet(input));
   }

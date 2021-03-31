@@ -1,4 +1,4 @@
-import { InputStream, Stream } from "src/util";
+import { InputStream, Stream } from 'src/util';
 
 type Header = {
   headerMapOffset: number;
@@ -45,8 +45,8 @@ export class ResourceFork {
       header.mapLength
     );
 
-    for (let type of map.types) {
-      for (let resource of type.resources) {
+    for (const type of map.types) {
+      for (const resource of type.resources) {
         stream.seek(header.dataOffset + resource.dataOffset, Stream.Seek.Set);
         const length = stream.getUint32();
         resource.data = stream.getUint8Array(length);
@@ -87,18 +87,19 @@ export class ResourceFork {
       types.push(this.readResourceForkType(stream));
     }
 
-    for (let type of types) {
-      let references = [];
+    for (const type of types) {
+      const references = [];
       for (let i = 0; i <= type.lastResourceIndex; i++) {
         references.push(this.readResource(stream));
       }
       type.resources = references;
     }
 
-    for (let type of types) {
-      for (let resource of type.resources) {
-        if (resource.nameOffset === -1 || resource.nameOffset === 0xffff)
+    for (const type of types) {
+      for (const resource of type.resources) {
+        if (resource.nameOffset === -1 || resource.nameOffset === 0xffff) {
           continue;
+        }
 
         stream.seek(offset + resource.nameOffset + nameOffset, Stream.Seek.Set);
         resource.name = stream.getPascalString();
@@ -129,7 +130,7 @@ export class ResourceFork {
       attributes,
       dataOffset,
       reservedHandle,
-      name: "",
+      name: '',
       data: null
     };
   }
@@ -139,7 +140,7 @@ export class ResourceFork {
       t => t.type === this.convertToTypeTag(typeIdentifier)
     );
 
-    if (!type) return [];
+    if (!type) { return []; }
 
     return type.resources.map(r => ({ id: r.id, name: r.name }));
   }
@@ -148,7 +149,7 @@ export class ResourceFork {
     const resource = this.map.types
       .find(t => t.type === this.convertToTypeTag(typeIdentifier))
       .resources.find(r => r.id === id);
-    if (!resource) return null;
+    if (!resource) { return null; }
 
     return resource.data;
   }

@@ -1,12 +1,12 @@
-import InputStream from "./input-stream";
-import OutputStream from "./output-stream";
-import Stream from "./stream";
-import {fault} from "fault";
+import InputStream from './input-stream';
+import OutputStream from './output-stream';
+import Stream from './stream';
+import {fault} from 'fault';
 
 const { floor } = Math;
 
 function assert(expr: boolean, message: string, ...rest: any[]) {
-  if (!expr) throw fault(message, ...rest);
+  if (!expr) { throw fault(message, ...rest); }
 }
 
 // Ported to typescript from https://github.com/Hopper262/classic-mac-utils/blob/master/snd2wav.pl
@@ -30,22 +30,22 @@ export default function sndToWav(
   let sampleEncoding: number;
   let baseFrequency: number;
 
-  assert(input.getUint16() === 1, "Bad snd format");
-  assert(input.getUint16() === 1, "Too many data types");
-  assert(input.getUint16() === 5, "Only sampeld sound can be decoded");
+  assert(input.getUint16() === 1, 'Bad snd format');
+  assert(input.getUint16() === 1, 'Too many data types');
+  assert(input.getUint16() === 5, 'Only sampeld sound can be decoded');
 
   opts = input.getUint32();
   assert(
     opts === 0x80 || opts === 0xa0 || opts === 0x3a0,
-    "Unhandled options in %2x",
+    'Unhandled options in %2x',
     opts
   );
 
-  assert(input.getUint16() === 1, "Too many commands");
-  assert(input.getUint16() === 0x8051, "Not a buffer command");
-  assert(input.getUint16() === 0, "Bad param1");
-  assert(input.getUint32() === 20, "Bad param2");
-  assert(input.getUint32() === 0, "Bad data pointer");
+  assert(input.getUint16() === 1, 'Too many commands');
+  assert(input.getUint16() === 0x8051, 'Not a buffer command');
+  assert(input.getUint16() === 0, 'Bad param1');
+  assert(input.getUint32() === 20, 'Bad param2');
+  assert(input.getUint32() === 0, 'Bad data pointer');
 
   numbytes = input.getUint32();
   samplerate = input.getUint32() / 65536.0;
@@ -56,14 +56,14 @@ export default function sndToWav(
   sampleEncoding = input.getUint8();
   assert(
     sampleEncoding === 0,
-    "Non-standard sample encoding %02x encountered",
+    'Non-standard sample encoding %02x encountered',
     sampleEncoding
   );
 
   baseFrequency = input.getUint8();
   assert(
     baseFrequency === 0x3c || baseFrequency === 0x3b || baseFrequency === 0x48,
-    "Weird base frequency %d encountered",
+    'Weird base frequency %d encountered',
     baseFrequency
   );
 
@@ -73,10 +73,10 @@ export default function sndToWav(
   channels = 1;
 
   const output = new OutputStream(dataSize + 36 + 0x1000);
-  output.writeCharacters("RIFF");
+  output.writeCharacters('RIFF');
   output.writeUint32(dataSize + 36);
-  output.writeCharacters("WAVE");
-  output.writeCharacters("fmt ");
+  output.writeCharacters('WAVE');
+  output.writeCharacters('fmt ');
   output.writeUint32(16);
   output.writeUint16(1);
   output.writeUint16(channels);
@@ -84,7 +84,7 @@ export default function sndToWav(
   output.writeUint32(rate * channels * bytesSample);
   output.writeUint16(channels * bytesSample);
   output.writeUint16(bytesSample * 8);
-  output.writeCharacters("data");
+  output.writeCharacters('data');
   output.writeUint32(dataSize);
 
   for (let i = 0; i < numbytes; i++) {

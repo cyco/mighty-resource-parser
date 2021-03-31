@@ -1,6 +1,6 @@
-import { TileSheet } from "../models";
-import { InputStream } from "src/util";
-import { Resource } from "../resource";
+import { TileSheet } from '../models';
+import { InputStream } from 'src/util';
+import { Resource } from '../resource';
 
 export default (_: Resource, input: InputStream) => {
   const intro = input.getUint16Array(4);
@@ -32,6 +32,6 @@ export default (_: Resource, input: InputStream) => {
   const tileset = new TileSheet();
   tileset.tiles = tiles;
   tileset.tileImages = tileImages;
-  tileset.paletteSource = "Images/Border.image";
+  tileset.paletteSource = 'Images/Border.image';
   return tileset;
 };

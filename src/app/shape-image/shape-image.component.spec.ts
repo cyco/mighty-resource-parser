@@ -1,8 +1,8 @@
-import { ComponentFixture, TestBed, waitForAsync } from "@angular/core/testing";
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
-import { ShapeImageComponent } from "./shape-image.component";
+import { ShapeImageComponent } from './shape-image.component';
 
-describe("ShapeImageComponent", () => {
+describe('ShapeImageComponent', () => {
   let component: ShapeImageComponent;
   let fixture: ComponentFixture<ShapeImageComponent>;
 
@@ -18,7 +18,7 @@ describe("ShapeImageComponent", () => {
     fixture.detectChanges();
   });
 
-  it("should create", () => {
+  it('should create', () => {
     expect(component).toBeTruthy();
   });
 });

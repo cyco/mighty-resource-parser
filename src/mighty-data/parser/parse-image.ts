@@ -1,6 +1,6 @@
-import { InputStream } from "src/util";
-import { Image } from "src/mighty-data/models";
-import { Resource } from "../resource";
+import { InputStream } from 'src/util';
+import { Image } from 'src/mighty-data/models';
+import { Resource } from '../resource';
 
 const { floor } = Math;
 

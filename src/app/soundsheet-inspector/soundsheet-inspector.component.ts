@@ -1,10 +1,10 @@
-import { Component, Input } from "@angular/core";
-import { SoundSheet } from "src/mighty-data/models/sound-sheet";
+import { Component, Input } from '@angular/core';
+import { SoundSheet } from 'src/mighty-data/models/sound-sheet';
 
 @Component({
-  selector: "app-soundsheet-inspector",
-  templateUrl: "./soundsheet-inspector.component.html",
-  styleUrls: ["./soundsheet-inspector.component.scss"]
+  selector: 'app-soundsheet-inspector',
+  templateUrl: './soundsheet-inspector.component.html',
+  styleUrls: ['./soundsheet-inspector.component.scss']
 })
 export class SoundsheetInspectorComponent {
   @Input()

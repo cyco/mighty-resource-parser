@@ -1,8 +1,8 @@
-import { ComponentFixture, TestBed, waitForAsync } from "@angular/core/testing";
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
-import { TilesetInspectorComponent } from "./tileset-inspector.component";
+import { TilesetInspectorComponent } from './tileset-inspector.component';
 
-describe("TilesetInspectorComponent", () => {
+describe('TilesetInspectorComponent', () => {
   let component: TilesetInspectorComponent;
   let fixture: ComponentFixture<TilesetInspectorComponent>;
 
@@ -18,7 +18,7 @@ describe("TilesetInspectorComponent", () => {
     fixture.detectChanges();
   });
 
-  it("should create", () => {
+  it('should create', () => {
     expect(component).toBeTruthy();
   });
 });

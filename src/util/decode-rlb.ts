@@ -1,5 +1,5 @@
-import InputStream from "./input-stream";
-import OutputStream from "./output-stream";
+import InputStream from './input-stream';
+import OutputStream from './output-stream';
 
 export default (input: InputStream, output: OutputStream): number => {
   let bytesWritten = 0;

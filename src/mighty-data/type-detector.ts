@@ -1,7 +1,7 @@
-import { Injectable } from "@angular/core";
-import { SoundSheet, Image, Map, Movie, TileSheet, ShapeSheet } from "./models";
+import { Injectable } from '@angular/core';
+import { SoundSheet, Image, Map, Movie, TileSheet, ShapeSheet } from './models';
 
-@Injectable({ providedIn: "root" })
+@Injectable({ providedIn: 'root' })
 export class TypeDetector {
   private extensionMap = {
     sounds: SoundSheet,
@@ -9,15 +9,15 @@ export class TypeDetector {
     tileset: TileSheet,
     spin: Movie,
     shapes: ShapeSheet,
-    "map-1": Map,
-    "map-2": Map,
-    "map-3": Map
+    'map-1': Map,
+    'map-2': Map,
+    'map-3': Map
   };
 
   public detect(file: string) {
-    const [name, extension] = file.split(".");
+    const [name, extension] = file.split('.');
 
-    if (name === "Audio/Music") {
+    if (name === 'Audio/Music') {
       return SoundSheet;
     }
 

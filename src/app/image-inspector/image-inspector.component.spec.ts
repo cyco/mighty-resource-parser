@@ -1,8 +1,8 @@
-import { ComponentFixture, TestBed, waitForAsync } from "@angular/core/testing";
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
-import { ImageInspectorComponent } from "./image-inspector.component";
+import { ImageInspectorComponent } from './image-inspector.component';
 
-describe("ImageInspectorComponent", () => {
+describe('ImageInspectorComponent', () => {
   let component: ImageInspectorComponent;
   let fixture: ComponentFixture<ImageInspectorComponent>;
 
@@ -18,7 +18,7 @@ describe("ImageInspectorComponent", () => {
     fixture.detectChanges();
   });
 
-  it("should create", () => {
+  it('should create', () => {
     expect(component).toBeTruthy();
   });
 });

@@ -13,7 +13,7 @@ class Stream {
   public static readonly Endian = Endian;
 
   public endianess: number = Stream.Endian.Big;
-  protected _offset: number = 0;
+  protected _offset = 0;
 
   get littleEndian() {
     return this.endianess === Stream.Endian.Little;

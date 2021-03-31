@@ -1,19 +1,19 @@
-import { Map } from "../models";
-import { Stream, InputStream } from "src/util";
-import { Resource } from "../resource";
+import { Map } from '../models';
+import { Stream, InputStream } from 'src/util';
+import { Resource } from '../resource';
 
 const fixTilesetPath = (path: string) => {
   switch (path) {
-    case "maps/bargain.tileset":
-      return "Maps/Bargain.Tileset";
-    case "maps/candy.tileset":
-      return "Maps/Candy.tileset";
-    case "maps/clown.tileset":
-      return "Maps/Clown.tileset";
-    case "maps/fairy.tileset":
-      return "Maps/Fairy.Tileset";
-    case "maps/jurassic.tileset":
-      return "Maps/Jurassic.tileset";
+    case 'maps/bargain.tileset':
+      return 'Maps/Bargain.Tileset';
+    case 'maps/candy.tileset':
+      return 'Maps/Candy.tileset';
+    case 'maps/clown.tileset':
+      return 'Maps/Clown.tileset';
+    case 'maps/fairy.tileset':
+      return 'Maps/Fairy.Tileset';
+    case 'maps/jurassic.tileset':
+      return 'Maps/Jurassic.tileset';
   }
 };
 
@@ -53,7 +53,7 @@ export default (resource: Resource, input: InputStream) => {
   map.tiles = tiles;
   map.items = items;
   map.tilesheetSource = fixTilesetPath(
-    resource.path.replace(/map-\d$/gi, "tileset").toLowerCase()
+    resource.path.replace(/map-\d$/gi, 'tileset').toLowerCase()
   );
 
   return map;

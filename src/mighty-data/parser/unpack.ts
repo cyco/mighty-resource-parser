@@ -5,7 +5,7 @@ import {
   decodeRLB,
   decodeRLW,
   decodeLZSS
-} from "src/util";
+} from 'src/util';
 
 enum CompressionType {
   RLB = 0,
