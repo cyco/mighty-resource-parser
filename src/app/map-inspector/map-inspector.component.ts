@@ -26,7 +26,7 @@ export class MapInspectorComponent implements OnChanges {
   @Input()
   public palette: Uint32Array;
 
-  @ViewChild("canvas", { static: false })
+  @ViewChild("canvas")
   canvas: ElementRef<HTMLCanvasElement>;
   public context: CanvasRenderingContext2D;
   constructor(private zone: NgZone) {}

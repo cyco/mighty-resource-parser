@@ -22,7 +22,7 @@ export class SoundInspectorComponent implements AfterViewInit, OnDestroy {
   public soundId: number;
   public error: string;
   public _soundData: any;
-  @ViewChild("waveform", { static: false })
+  @ViewChild("waveform")
   waveform: ElementRef<HTMLDivElement>;
   private wavesurfer: WaveSurfer;
   private _sound: Blob | File;

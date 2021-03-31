@@ -22,7 +22,7 @@ export class PaletteImageComponent implements AfterViewInit {
   public pixels: Uint8Array;
   @Input()
   public mask: Uint8Array;
-  @ViewChild("canvas", { static: false })
+  @ViewChild("canvas")
   canvas: ElementRef<HTMLCanvasElement>;
   public context: CanvasRenderingContext2D;
 
