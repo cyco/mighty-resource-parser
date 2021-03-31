@@ -1,7 +1,7 @@
 import InputStream from "./input-stream";
 import OutputStream from "./output-stream";
 import Stream from "./stream";
-import fault from "fault";
+import {fault} from "fault";
 
 const { floor } = Math;
 

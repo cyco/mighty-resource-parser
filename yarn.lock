@@ -1177,38 +1177,38 @@
   resolved "https://registry.yarnpkg.com/@discoveryjs/json-ext/-/json-ext-0.5.2.tgz#8f03a22a04de437254e8ce8cc84ba39689288752"
   integrity sha512-HyYEUDeIj5rRQU2Hk5HTB2uHsbRQpF70nvMhVzi+VJR0X+xNEhjPui4/kBf3VeH/wqD28PT4sVOm8qqLjBrSZg==
 
-"@fortawesome/angular-fontawesome@^0.5.0":
-  version "0.5.0"
-  resolved "https://registry.yarnpkg.com/@fortawesome/angular-fontawesome/-/angular-fontawesome-0.5.0.tgz#5dbc01714b4af45a2ecb8dd63a6f8b462a8337e1"
-  integrity sha512-5IR/jNMddiEpgApcqSMfp7l5kZqOtxQYzkSLW6iZ4MZHbQQ+Kc9tu9qi2hro6VFSk/sPxeYEzkzGZUNrMYiwOg==
+"@fortawesome/angular-fontawesome@^0.8.2":
+  version "0.8.2"
+  resolved "https://registry.yarnpkg.com/@fortawesome/angular-fontawesome/-/angular-fontawesome-0.8.2.tgz#fe0401c66dd237fd78d3f29d540ef7302bb40e5a"
+  integrity sha512-K/AiykA4YbHKE6XKEtZ0ZvVRQocUHyk+79HYWIfhGy3teHpzxsUqB/UjDaxivgBd6dF6ihlzgEbgrDMHlGNwGg==
   dependencies:
-    tslib "^1.9.0"
+    tslib "^2.1.0"
 
-"@fortawesome/fontawesome-common-types@^0.2.25":
-  version "0.2.25"
-  resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-common-types/-/fontawesome-common-types-0.2.25.tgz#6df015905081f2762e5cfddeb7a20d2e9b16c786"
-  integrity sha512-3RuZPDuuPELd7RXtUqTCfed14fcny9UiPOkdr2i+cYxBoTOfQgxcDoq77fHiiHcgWuo1LoBUpvGxFF1H/y7s3Q==
+"@fortawesome/fontawesome-common-types@^0.2.35":
+  version "0.2.35"
+  resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-common-types/-/fontawesome-common-types-0.2.35.tgz#01dd3d054da07a00b764d78748df20daf2b317e9"
+  integrity sha512-IHUfxSEDS9dDGqYwIW7wTN6tn/O8E0n5PcAHz9cAaBoZw6UpG20IG/YM3NNLaGPwPqgjBAFjIURzqoQs3rrtuw==
 
-"@fortawesome/fontawesome-svg-core@^1.2.25":
-  version "1.2.25"
-  resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-svg-core/-/fontawesome-svg-core-1.2.25.tgz#24b03391d14f0c6171e8cad7057c687b74049790"
-  integrity sha512-MotKnn53JKqbkLQiwcZSBJVYtTgIKFbh7B8+kd05TSnfKYPFmjKKI59o2fpz5t0Hzl35vVGU6+N4twoOpZUrqA==
+"@fortawesome/fontawesome-svg-core@^1.2.35":
+  version "1.2.35"
+  resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-svg-core/-/fontawesome-svg-core-1.2.35.tgz#85aea8c25645fcec88d35f2eb1045c38d3e65cff"
+  integrity sha512-uLEXifXIL7hnh2sNZQrIJWNol7cTVIzwI+4qcBIq9QWaZqUblm0IDrtSqbNg+3SQf8SMGHkiSigD++rHmCHjBg==
   dependencies:
-    "@fortawesome/fontawesome-common-types" "^0.2.25"
+    "@fortawesome/fontawesome-common-types" "^0.2.35"
 
-"@fortawesome/free-regular-svg-icons@^5.11.2":
-  version "5.11.2"
-  resolved "https://registry.yarnpkg.com/@fortawesome/free-regular-svg-icons/-/free-regular-svg-icons-5.11.2.tgz#6edfc5c230094be3b9070fef048c01aa321a8428"
-  integrity sha512-k0vbThRv9AvnXYBWi1gn1rFW4X7co/aFkbm0ZNmAR5PoWb9vY9EDDDobg8Ay4ISaXtCPypvJ0W1FWkSpLQwZ6w==
+"@fortawesome/free-regular-svg-icons@^5.15.3":
+  version "5.15.3"
+  resolved "https://registry.yarnpkg.com/@fortawesome/free-regular-svg-icons/-/free-regular-svg-icons-5.15.3.tgz#1ec4f2410ff638db549c5c5484fc60b66407dbe6"
+  integrity sha512-q4/p8Xehy9qiVTdDWHL4Z+o5PCLRChePGZRTXkl+/Z7erDVL8VcZUuqzJjs6gUz6czss4VIPBRdCz6wP37/zMQ==
   dependencies:
-    "@fortawesome/fontawesome-common-types" "^0.2.25"
+    "@fortawesome/fontawesome-common-types" "^0.2.35"
 
-"@fortawesome/free-solid-svg-icons@^5.11.2":
-  version "5.11.2"
-  resolved "https://registry.yarnpkg.com/@fortawesome/free-solid-svg-icons/-/free-solid-svg-icons-5.11.2.tgz#2f2f1459743a27902b76655a0d0bc5ec4d945631"
-  integrity sha512-zBue4i0PAZJUXOmLBBvM7L0O7wmsDC8dFv9IhpW5QL4kT9xhhVUsYg/LX1+5KaukWq4/cbDcKT+RT1aRe543sg==
+"@fortawesome/free-solid-svg-icons@^5.15.3":
+  version "5.15.3"
+  resolved "https://registry.yarnpkg.com/@fortawesome/free-solid-svg-icons/-/free-solid-svg-icons-5.15.3.tgz#52eebe354f60dc77e0bde934ffc5c75ffd04f9d8"
+  integrity sha512-XPeeu1IlGYqz4VWGRAT5ukNMd4VHUEEJ7ysZ7pSSgaEtNvSo+FLurybGJVmiqkQdK50OkSja2bfZXOeyMGRD8Q==
   dependencies:
-    "@fortawesome/fontawesome-common-types" "^0.2.25"
+    "@fortawesome/fontawesome-common-types" "^0.2.35"
 
 "@istanbuljs/schema@^0.1.2":
   version "0.1.3"
@@ -1389,10 +1389,10 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-12.11.7.tgz#57682a9771a3f7b09c2497f28129a0462966524a"
   integrity sha512-JNbGaHFCLwgHn/iCckiGSOZ1XYHsKFwREtzPwSGCVld1SGhOlmZw2D4ZI94HQCrBHbADzW9m4LER/8olJTRGHA==
 
-"@types/node@^12.11.1":
-  version "12.20.7"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-12.20.7.tgz#1cb61fd0c85cb87e728c43107b5fd82b69bc9ef8"
-  integrity sha512-gWL8VUkg8VRaCAUgG9WmhefMqHmMblxe2rVpMF86nZY/+ZysU+BkAp+3cz03AixWDSSz0ks5WX59yAhv/cDwFA==
+"@types/node@^14.14.37":
+  version "14.14.37"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-14.14.37.tgz#a3dd8da4eb84a996c36e331df98d82abd76b516e"
+  integrity sha512-XYmBiy+ohOR4Lh5jE379fV2IU+6Jn4g5qASinhitfyO71b/sCo6MKsMLF5tc7Zf2CE8hViVQyYSobJNke8OvUw==
 
 "@types/parse-json@^4.0.0":
   version "4.0.0"
@@ -1419,10 +1419,10 @@
   resolved "https://registry.yarnpkg.com/@types/source-list-map/-/source-list-map-0.1.2.tgz#0078836063ffaf17412349bba364087e0ac02ec9"
   integrity sha512-K5K+yml8LTo9bWJI/rECfIPrGgxdpeNbj+d53lwN4QjW1MCwlkhUms+gtdzigTeUyBr09+u8BwOIY3MXvHdcsA==
 
-"@types/wavesurfer.js@^2.0.2":
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/@types/wavesurfer.js/-/wavesurfer.js-2.0.2.tgz#b98a4d57ca24ee2028ae6dd5c2208b568bb73842"
-  integrity sha512-078vSMwH9LNVg9oAe7/M27p1MjfJ3ncuj54ROj+nL4vnrvDEV7Ye1v+o/LTR0Z396r6u6DTNkoEq5kKgJkzFrQ==
+"@types/wavesurfer.js@^3.3.2":
+  version "3.3.2"
+  resolved "https://registry.yarnpkg.com/@types/wavesurfer.js/-/wavesurfer.js-3.3.2.tgz#e916456691586b07004f40d56c22dc7138509eae"
+  integrity sha512-bujQxJR+2TDXe5hc2kG36n38rJtdTbCafQddWaNJwgdNDVqMVxCCKAFYRQWq1aXnN/h9BTHLIVwi4gM8IwRt5A==
 
 "@types/webpack-sources@^0.1.5":
   version "0.1.5"
@@ -4048,12 +4048,12 @@ fastq@^1.6.0:
   dependencies:
     reusify "^1.0.4"
 
-fault@^1.0.3:
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/fault/-/fault-1.0.3.tgz#4da88cf979b6b792b4e13c7ec836767725170b7e"
-  integrity sha512-sfFuP4X0hzrbGKjAUNXYvNqsZ5F6ohx/dZ9I0KQud/aiZNwg263r5L9yGB0clvXHCkzXh5W3t7RSHchggYIFmA==
+fault@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/fault/-/fault-2.0.0.tgz#ad2198a6e28e344dcda76a7b32406b1039f0b707"
+  integrity sha512-JsDj9LFcoC+4ChII1QpXPA7YIaY8zmqPYw7h9j5n7St7a0BBKfNnwEBAUQRBx70o2q4rs+BeSNHk8Exm6xE7fQ==
   dependencies:
-    format "^0.2.2"
+    format "^0.2.0"
 
 faye-websocket@^0.11.3:
   version "0.11.3"
@@ -4184,7 +4184,7 @@ form-data@~2.3.2:
     combined-stream "^1.0.6"
     mime-types "^2.1.12"
 
-format@^0.2.2:
+format@^0.2.0:
   version "0.2.2"
   resolved "https://registry.yarnpkg.com/format/-/format-0.2.2.tgz#d6170107e9efdc4ed30c9dc39016df942b5cb58b"
   integrity sha1-1hcBB+nv3E7TDJ3DkBbflCtctYs=
@@ -9145,7 +9145,7 @@ ts-pnp@^1.1.6:
   resolved "https://registry.yarnpkg.com/ts-pnp/-/ts-pnp-1.2.0.tgz#a500ad084b0798f1c3071af391e65912c86bca92"
   integrity sha512-csd+vJOb/gkzvcCHgTGSChYpy5f1/XKNsmvBGO4JXS+z1v2HobugDz4s1IeFXM3wZB44uczs+eazB5Q/ccdhQw==
 
-tslib@2.1.0, tslib@^2.0.0:
+tslib@2.1.0, tslib@^2.0.0, tslib@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.1.0.tgz#da60860f1c2ecaa5703ab7d39bc05b6bf988b97a"
   integrity sha512-hcVC3wYEziELGGmEEXue7D75zbwIIVUMWAVbHItGPx0ziyXxrOMQx4rQEVEV45Ut/1IotuEvwqPopzIOkDMf0A==
@@ -9492,10 +9492,10 @@ watchpack@^1.7.4:
     chokidar "^3.4.1"
     watchpack-chokidar2 "^2.0.1"
 
-wavesurfer.js@^3.2.0:
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/wavesurfer.js/-/wavesurfer.js-3.2.0.tgz#c316f3bd1b9f0f4d26188c6865a57e29a13efedc"
-  integrity sha512-P75SSpYTpzpCKFKjxmHkdp2jGpcm4neaGncBGV/jzfI5FPSIfl5mXTTZlZFpJhs7To+NI34Dj5y661JI43HEzA==
+wavesurfer.js@^4.6.0:
+  version "4.6.0"
+  resolved "https://registry.yarnpkg.com/wavesurfer.js/-/wavesurfer.js-4.6.0.tgz#3dc26748b2200978afe802582a2085f46eb0ce0d"
+  integrity sha512-+nn6VD86pTtRu9leVNXoIGOCMJyaTNsKNy9v+SfUsYo+SxLCQvEzrZZ/eKMImqspsk+BX1V1xlY4FRkHswu3fA==
 
 wbuf@^1.1.0, wbuf@^1.7.3:
   version "1.7.3"
