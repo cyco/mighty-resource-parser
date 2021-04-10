@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
-import {TileSheet, Image} from 'src/mighty-data/models';
+import {TileSheet, Image, ShapeSheet, ShapeSet, Shape} from 'src/mighty-data/models';
 import {Resource} from 'src/mighty-data/resource';
 import {ResourceManager} from 'src/mighty-data/resource-manager';
-import {downloadImage} from 'src/util';
+import {download, downloadImage} from 'src/util';
+import JSZip from "jszip";
 
 @Injectable({
   providedIn: 'root'
@@ -12,6 +13,7 @@ export class SerializerService {
 
   public async download(resource: Resource): Promise<void> {
     if(resource.type === TileSheet) await this.downloadTilesheet(resource);
+    if(resource.type === ShapeSheet) await this.downloadShapeSheet(resource);
   }
 
 
@@ -50,7 +52,65 @@ export class SerializerService {
     downloadImage(image, `${name}-tileset.png`, 'png');
   }
 
+  private async downloadShapeSheet(resource: Resource) {
+    const shapeSheet = resource.contents as ShapeSheet;
+
+    const paletteSourceImageResource = await this.resourceManager.get(shapeSheet.paletteSource).toPromise();
+    const paletteSourceImage = paletteSourceImageResource.contents as Image;
+    const palette = paletteSourceImage.palette;
+
+    const zip = new JSZip();
+
+    for(let i=0; i < shapeSheet.sets.length; i++) {
+      const shapeSet = shapeSheet.sets[i];
+      const name = `shape-${i}`;
+      const folder = zip.folder(`shape-${i}`);
+      for(let j=0; j < shapeSet.shapes.length; j++) {
+        const shape = shapeSet.shapes[j];
+        const fileName = name + "-" + j +".png";
+        folder.file(fileName, this.drawShape(shape, palette),   {base64:true} )
+      }
+    }
+
+    const result = await zip.generateAsync({type: 'arraybuffer'});
+    download(result, resource.path.split("/")[1].split(".")[0]+"-shapes.zip");
+  }
+
+  private drawShape(shape: Shape, palette: Uint32Array) {
+    const { width, height, pixels, mask } = shape;
+
+    const canvas = document.createElement("canvas");
+    const context = canvas.getContext("2d");
+    canvas.width = width;
+    canvas.height = height;
+
+    const result = new ImageData(width, height);
+    const buffer = new ArrayBuffer(result.data.length);
+    const byteArray = new Uint8Array(buffer);
+    const data = new Uint32Array(buffer);
+
+    if (mask) {
+      for (let ty = 0; ty < height; ty++) {
+        for (let tx = 0; tx < width; tx++) {
+          const idx = ty * width + tx;
+          data[ty * width + tx] = !mask[idx] ? palette[pixels[idx]] : 0;
+        }
+      }
+    } else {
+      for (let ty = 0; ty < height; ty++) {
+        for (let tx = 0; tx < width; tx++) {
+          data[ty * width + tx] = palette[pixels[ty * width + tx]];
+        }
+      }
+    }
+
+    result.data.set(byteArray);
+    context.putImageData(result, 0, 0);
+
+    return canvas.toDataURL("png").substr(22);
+  }
+
   public canSerialize(resource: Resource): boolean {
-    return resource.type === TileSheet;
+    return resource.type === TileSheet || resource.type === ShapeSheet;
   }
 }
