@@ -6,11 +6,13 @@ describe('TilesetInspectorComponent', () => {
   let component: TilesetInspectorComponent;
   let fixture: ComponentFixture<TilesetInspectorComponent>;
 
-  beforeEach(waitForAsync(() => {
-    TestBed.configureTestingModule({
-      declarations: [TilesetInspectorComponent]
-    }).compileComponents();
-  }));
+  beforeEach(
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        declarations: [TilesetInspectorComponent]
+      }).compileComponents();
+    })
+  );
 
   beforeEach(() => {
     fixture = TestBed.createComponent(TilesetInspectorComponent);

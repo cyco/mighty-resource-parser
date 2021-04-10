@@ -2,7 +2,7 @@ import { Component, Input } from '@angular/core';
 import { ResourceManager } from 'src/mighty-data/resource-manager';
 import * as Models from 'src/mighty-data/models';
 import { faFile, faSave } from '@fortawesome/free-regular-svg-icons';
-import {SerializerService} from 'src/app/serializer.service';
+import { SerializerService } from 'src/app/serializer.service';
 
 @Component({
   selector: 'app-detail',

@@ -1,11 +1,4 @@
-import {
-  Component,
-  Input,
-  ViewChild,
-  ElementRef,
-  AfterViewInit,
-  OnDestroy
-} from '@angular/core';
+import { Component, Input, ViewChild, ElementRef, AfterViewInit, OnDestroy } from '@angular/core';
 import * as WaveSurfer from 'wavesurfer.js';
 import { sndToWav, download } from 'src/util';
 
@@ -45,7 +38,9 @@ export class SoundInspectorComponent implements AfterViewInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    if (!this.wavesurfer) { return; }
+    if (!this.wavesurfer) {
+      return;
+    }
     this.wavesurfer.stop();
     this.wavesurfer.destroy();
     this.wavesurfer = null;
@@ -71,15 +66,22 @@ export class SoundInspectorComponent implements AfterViewInit, OnDestroy {
   }
 
   public togglePlayback() {
-    if (!this.wavesurfer) { return; }
+    if (!this.wavesurfer) {
+      return;
+    }
     this.wavesurfer.playPause();
   }
 
   private reloadSound() {
-    if (!this.wavesurfer) { return; }
+    if (!this.wavesurfer) {
+      return;
+    }
 
-    if (this._sound) { this.wavesurfer.loadBlob(this._sound); }
-    else { this.wavesurfer.empty(); }
+    if (this._sound) {
+      this.wavesurfer.loadBlob(this._sound);
+    } else {
+      this.wavesurfer.empty();
+    }
   }
 
   public downloadSndFile() {

@@ -17,14 +17,14 @@ export class ShapesheetInspectorComponent implements OnChanges {
   private currentPaletteSource: string;
 
   ngOnChanges() {
-    if (!this.shapesheet) { return; }
+    if (!this.shapesheet) {
+      return;
+    }
     if (this.currentPaletteSource !== this.shapesheet.paletteSource) {
-      this.resourceManager
-        .get(this.shapesheet.paletteSource)
-        .subscribe(resource => {
-          this.currentPaletteSource = this.shapesheet.paletteSource;
-          this.palette = resource.contents.palette;
-        });
+      this.resourceManager.get(this.shapesheet.paletteSource).subscribe(resource => {
+        this.currentPaletteSource = this.shapesheet.paletteSource;
+        this.palette = resource.contents.palette;
+      });
     }
   }
 }

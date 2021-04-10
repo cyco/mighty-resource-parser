@@ -25,10 +25,7 @@ export default (resource: Resource, input: InputStream) => {
   const height = input.getUint16();
   const offset2 = input.getUint32();
   const getAltTileId = (x: number, y: number, bytesPerTile = 2): number => {
-    input.seek(
-      offset + 4 + y * width * bytesPerTile + bytesPerTile * x,
-      Stream.Seek.Set
-    );
+    input.seek(offset + 4 + y * width * bytesPerTile + bytesPerTile * x, Stream.Seek.Set);
     return input.getUint16() & 0x07ff;
   };
 
@@ -52,9 +49,7 @@ export default (resource: Resource, input: InputStream) => {
   map.height = height;
   map.tiles = tiles;
   map.items = items;
-  map.tilesheetSource = fixTilesetPath(
-    resource.path.replace(/map-\d$/gi, 'tileset').toLowerCase()
-  );
+  map.tilesheetSource = fixTilesetPath(resource.path.replace(/map-\d$/gi, 'tileset').toLowerCase());
 
   return map;
 };

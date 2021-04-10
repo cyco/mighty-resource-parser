@@ -39,11 +39,7 @@ export class ResourceFork {
 
   private read(stream: InputStream): [Header, Map] {
     const header = this.readHeader(stream);
-    const map = this.readHeaderMap(
-      stream,
-      header.headerMapOffset,
-      header.mapLength
-    );
+    const map = this.readHeaderMap(stream, header.headerMapOffset, header.mapLength);
 
     for (const type of map.types) {
       for (const resource of type.resources) {
@@ -65,11 +61,7 @@ export class ResourceFork {
     return { dataOffset, headerMapOffset, dataLength, mapLength };
   }
 
-  private readHeaderMap(
-    stream: InputStream,
-    offset: number,
-    _len: number
-  ): Map {
+  private readHeaderMap(stream: InputStream, offset: number, _len: number): Map {
     stream.seek(offset, Stream.Seek.Set);
     const reserved = stream.getUint8Array(0x10);
 
@@ -136,11 +128,11 @@ export class ResourceFork {
   }
 
   public list(typeIdentifier: string) {
-    const type = this.map.types.find(
-      t => t.type === this.convertToTypeTag(typeIdentifier)
-    );
+    const type = this.map.types.find(t => t.type === this.convertToTypeTag(typeIdentifier));
 
-    if (!type) { return []; }
+    if (!type) {
+      return [];
+    }
 
     return type.resources.map(r => ({ id: r.id, name: r.name }));
   }
@@ -149,17 +141,16 @@ export class ResourceFork {
     const resource = this.map.types
       .find(t => t.type === this.convertToTypeTag(typeIdentifier))
       .resources.find(r => r.id === id);
-    if (!resource) { return null; }
+    if (!resource) {
+      return null;
+    }
 
     return resource.data;
   }
 
   private convertToTypeTag(type: string) {
     return (
-      (type.charCodeAt(0) << 24) +
-      (type.charCodeAt(1) << 16) +
-      (type.charCodeAt(2) << 8) +
-      (type.charCodeAt(3) << 0)
+      (type.charCodeAt(0) << 24) + (type.charCodeAt(1) << 16) + (type.charCodeAt(2) << 8) + (type.charCodeAt(3) << 0)
     );
   }
 

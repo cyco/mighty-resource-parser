@@ -11,11 +11,7 @@ import { Parser } from './parser';
 export class ResourceManager {
   private cache: Map<string, any> = new Map();
 
-  constructor(
-    private httpClient: HttpClient,
-    private typeDetector: TypeDetector,
-    private parser: Parser
-  ) {}
+  constructor(private httpClient: HttpClient, private typeDetector: TypeDetector, private parser: Parser) {}
 
   get(path: string): Observable<any> {
     if (this.cache.has(path)) {
@@ -23,11 +19,7 @@ export class ResourceManager {
     }
 
     const type = this.typeDetector.detect(path);
-    const url = [
-      'assets',
-      'Data',
-      path + (type === SoundSheet ? '@rsrc-fork' : '')
-    ].join('/');
+    const url = ['assets', 'Data', path + (type === SoundSheet ? '@rsrc-fork' : '')].join('/');
 
     return this.httpClient.get(url, { responseType: 'arraybuffer' }).pipe(
       map(c => new Resource(path, c.slice(0), type)),

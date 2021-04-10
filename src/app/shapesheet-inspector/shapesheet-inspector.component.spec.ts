@@ -6,11 +6,13 @@ describe('ShapesheetInspectorComponent', () => {
   let component: ShapesheetInspectorComponent;
   let fixture: ComponentFixture<ShapesheetInspectorComponent>;
 
-  beforeEach(waitForAsync(() => {
-    TestBed.configureTestingModule({
-      declarations: [ShapesheetInspectorComponent]
-    }).compileComponents();
-  }));
+  beforeEach(
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        declarations: [ShapesheetInspectorComponent]
+      }).compileComponents();
+    })
+  );
 
   beforeEach(() => {
     fixture = TestBed.createComponent(ShapesheetInspectorComponent);

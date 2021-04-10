@@ -11,7 +11,9 @@ export class SoundSheet {
   }
 
   public loadSound(id: number) {
-    if (this._soundData.has(id)) { return this._soundData.get(id); }
+    if (this._soundData.has(id)) {
+      return this._soundData.get(id);
+    }
     const soundData = this.resourceFork.readResourceData('snd ', id);
     this._soundData.set(id, soundData);
     return soundData;

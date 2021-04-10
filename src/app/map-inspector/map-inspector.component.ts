@@ -1,12 +1,4 @@
-import {
-  Component,
-  Input,
-  OnChanges,
-  SimpleChanges,
-  NgZone,
-  ViewChild,
-  ElementRef
-} from '@angular/core';
+import { Component, Input, OnChanges, SimpleChanges, NgZone, ViewChild, ElementRef } from '@angular/core';
 import { TileSheet } from 'src/mighty-data/models/tile-sheet';
 import { Map } from 'src/mighty-data/models/map';
 import { ResourceManager } from 'src/mighty-data/resource-manager';
@@ -46,7 +38,9 @@ export class MapInspectorComponent implements OnChanges {
       );
     }
 
-    if (!this.context) { return; }
+    if (!this.context) {
+      return;
+    }
     this.redraw();
   }
 
@@ -61,7 +55,9 @@ export class MapInspectorComponent implements OnChanges {
 
   private redraw() {
     const { palette, map, tilesheet } = this;
-    if (!palette || !map || !tilesheet) { return; }
+    if (!palette || !map || !tilesheet) {
+      return;
+    }
 
     this.context.putImageData(this.draw(map), 0, 0);
   }
@@ -75,10 +71,7 @@ export class MapInspectorComponent implements OnChanges {
     const ZoneHeight = map.height;
 
     const palette = this.palette;
-    const result = new ImageData(
-      ZoneWidth * TileWidth,
-      ZoneHeight * TileHeight
-    );
+    const result = new ImageData(ZoneWidth * TileWidth, ZoneHeight * TileHeight);
     const buffer = new ArrayBuffer(result.data.length);
     const byteArray = new Uint8Array(buffer);
     const data = new Uint32Array(buffer);
@@ -91,7 +84,9 @@ export class MapInspectorComponent implements OnChanges {
         if (!pixels) {
           console.log('Tile', tileId, 'of', this.tilesheet.tiles.length);
         }
-        if (!pixels) { continue; }
+        if (!pixels) {
+          continue;
+        }
 
         const sy = y * TileHeight;
         const sx = x * TileWidth;

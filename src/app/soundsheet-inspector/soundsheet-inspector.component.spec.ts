@@ -6,11 +6,13 @@ describe('SoundsheetInspectorComponent', () => {
   let component: SoundsheetInspectorComponent;
   let fixture: ComponentFixture<SoundsheetInspectorComponent>;
 
-  beforeEach(waitForAsync(() => {
-    TestBed.configureTestingModule({
-      declarations: [SoundsheetInspectorComponent]
-    }).compileComponents();
-  }));
+  beforeEach(
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        declarations: [SoundsheetInspectorComponent]
+      }).compileComponents();
+    })
+  );
 
   beforeEach(() => {
     fixture = TestBed.createComponent(SoundsheetInspectorComponent);

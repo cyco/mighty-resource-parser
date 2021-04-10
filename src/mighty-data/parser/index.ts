@@ -1,12 +1,6 @@
 import { Resource } from '../resource';
 import { ResourceManager } from '../resource-manager';
-import {
-  Image,
-  SoundSheet,
-  ShapeSheet,
-  TileSheet,
-  Map as MapModel
-} from '../models';
+import { Image, SoundSheet, ShapeSheet, TileSheet, Map as MapModel } from '../models';
 import { Stream, InputStream } from 'src/util';
 import parseImage from './parse-image';
 import parseMap from './parse-map';

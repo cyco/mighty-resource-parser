@@ -16,18 +16,12 @@ export default (_: Resource, input: InputStream) => {
   const offset4Garbage = input.getUint16();
   const offset4 = input.getUint16();
   const headerCount = input.getUint16();
-  const headers = Array.from({ length: headerCount }).map(() =>
-    input.getCharacters(0x100).trim()
-  );
+  const headers = Array.from({ length: headerCount }).map(() => input.getCharacters(0x100).trim());
   const tileImageCount = input.getUint16();
-  const tileImages = Array.from({ length: tileImageCount }).map(() =>
-    input.getUint8Array(0x400)
-  );
+  const tileImages = Array.from({ length: tileImageCount }).map(() => input.getUint8Array(0x400));
 
   const tileCount = input.getUint16();
-  const tiles = Array.from({ length: tileCount }).map(
-    () => tileImages[input.getUint16()]
-  );
+  const tiles = Array.from({ length: tileCount }).map(() => tileImages[input.getUint16()]);
 
   const tileset = new TileSheet();
   tileset.tiles = tiles;

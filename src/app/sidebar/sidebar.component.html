@@ -1,13 +1,17 @@
 <ul>
-	<li *ngFor="let dir of directories">
-		<span>
-			<fa-icon *ngIf="dir.icon" [icon]="dir.icon"></fa-icon>
-			<a title="Expand">{{dir.name}}</a>
-		</span>
-		<ul *ngIf="dir.files">
-			<li *ngFor="let file of dir.files" (click)="select(file, dir)" [class.selected]="currentDir === dir && currentFile === file">
-				{{file}}
-			</li>
-		</ul>
-	</li>
+  <li *ngFor="let dir of directories">
+    <span>
+      <fa-icon *ngIf="dir.icon" [icon]="dir.icon"></fa-icon>
+      <a title="Expand">{{ dir.name }}</a>
+    </span>
+    <ul *ngIf="dir.files">
+      <li
+        *ngFor="let file of dir.files"
+        (click)="select(file, dir)"
+        [class.selected]="currentDir === dir && currentFile === file"
+      >
+        {{ file }}
+      </li>
+    </ul>
+  </li>
 </ul>

@@ -6,10 +6,7 @@ class InputStream extends Stream {
   private _arrayBuffer: ArrayBuffer | SharedArrayBuffer;
   private _dataView: DataView;
 
-  constructor(
-    data: ArrayBuffer | SharedArrayBuffer | string,
-    endianess = Stream.Endian.Little
-  ) {
+  constructor(data: ArrayBuffer | SharedArrayBuffer | string, endianess = Stream.Endian.Little) {
     super();
 
     this.endianess = endianess;
@@ -25,14 +22,14 @@ class InputStream extends Stream {
     return this.offset === this.length;
   }
 
-  private _makeArrayBuffer(
-    data: ArrayBuffer | SharedArrayBuffer | string
-  ): ArrayBuffer | SharedArrayBuffer {
+  private _makeArrayBuffer(data: ArrayBuffer | SharedArrayBuffer | string): ArrayBuffer | SharedArrayBuffer {
     if (typeof data === 'string') {
       const binaryString = atob(data);
       const len = binaryString.length;
       const bytes = new Uint8Array(len);
-      for (let i = 0; i < len; i++) { bytes[i] = binaryString.charCodeAt(i); }
+      for (let i = 0; i < len; i++) {
+        bytes[i] = binaryString.charCodeAt(i);
+      }
 
       return bytes.buffer;
     }
@@ -60,12 +57,10 @@ class InputStream extends Stream {
     let result: number;
     if (this.littleEndian) {
       result =
-        this._dataView.getUint16(this._offset, this.littleEndian) +
-        (this._dataView.getUint8(this._offset) << 16);
+        this._dataView.getUint16(this._offset, this.littleEndian) + (this._dataView.getUint8(this._offset) << 16);
     } else {
       result =
-        (this._dataView.getUint16(this._offset, this.littleEndian) << 8) +
-        this._dataView.getUint8(this._offset + 2);
+        (this._dataView.getUint16(this._offset, this.littleEndian) << 8) + this._dataView.getUint8(this._offset + 2);
     }
     this._offset += 3;
     return result;
@@ -96,7 +91,9 @@ class InputStream extends Stream {
   }
 
   getCharacters(length: number, encoding: string = DefaultEncoding): string {
-    if (length === 0) { return ''; }
+    if (length === 0) {
+      return '';
+    }
 
     const data = new Uint8Array(this._arrayBuffer, this._offset, length);
     this._offset += length;
@@ -105,30 +102,24 @@ class InputStream extends Stream {
     return decoder.decode(data);
   }
 
-  getCStringWithLength(
-    fixedLength: number,
-    encoding: string = DefaultEncoding
-  ): string {
+  getCStringWithLength(fixedLength: number, encoding: string = DefaultEncoding): string {
     const raw = this.getUint8Array(fixedLength);
     let length = 0;
-    while (length < raw.length && raw[length] !== 0) { length++; }
+    while (length < raw.length && raw[length] !== 0) {
+      length++;
+    }
 
     const decoder = new TextDecoder(encoding);
     return decoder.decode(raw.slice(0, length));
   }
 
-  getNullTerminatedString(
-    maxLength: number,
-    encoding: string = DefaultEncoding
-  ): string {
-    const uint8Array = new Uint8Array(
-      this._arrayBuffer,
-      this._offset,
-      maxLength
-    );
+  getNullTerminatedString(maxLength: number, encoding: string = DefaultEncoding): string {
+    const uint8Array = new Uint8Array(this._arrayBuffer, this._offset, maxLength);
 
     let length = -1;
-    while (uint8Array[++length]) { true /* nop */; }
+    while (uint8Array[++length]) {
+      true /* nop */;
+    }
 
     return this.getCharacters(length, encoding);
   }
@@ -153,10 +144,7 @@ class InputStream extends Stream {
     let result: Uint16Array;
 
     if (this._offset % 2 !== 0) {
-      const buffer = this._arrayBuffer.slice(
-        this._offset,
-        this._offset + length * 2
-      );
+      const buffer = this._arrayBuffer.slice(this._offset, this._offset + length * 2);
       result = new Uint16Array(buffer);
     } else {
       result = new Uint16Array(this._arrayBuffer, this._offset, length);
@@ -170,10 +158,7 @@ class InputStream extends Stream {
     let result: Int16Array;
 
     if (this._offset % 2 !== 0) {
-      const buffer = this._arrayBuffer.slice(
-        this._offset,
-        this._offset + length * 2
-      );
+      const buffer = this._arrayBuffer.slice(this._offset, this._offset + length * 2);
       result = new Int16Array(buffer);
     } else {
       result = new Int16Array(this._arrayBuffer, this._offset, length);
@@ -187,10 +172,7 @@ class InputStream extends Stream {
     let result: Uint32Array;
 
     if (this._offset % 4 !== 0) {
-      const buffer = this._arrayBuffer.slice(
-        this._offset,
-        this._offset + length * 4
-      );
+      const buffer = this._arrayBuffer.slice(this._offset, this._offset + length * 4);
       result = new Uint32Array(buffer);
     } else {
       result = new Uint32Array(this._arrayBuffer, this._offset, length);
@@ -204,10 +186,7 @@ class InputStream extends Stream {
     let result: Int32Array;
 
     if (this._offset % 4 !== 0) {
-      const buffer = this._arrayBuffer.slice(
-        this._offset,
-        this._offset + length * 4
-      );
+      const buffer = this._arrayBuffer.slice(this._offset, this._offset + length * 4);
       result = new Int32Array(buffer);
     } else {
       result = new Int32Array(this._arrayBuffer, this._offset, length);

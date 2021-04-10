@@ -17,18 +17,24 @@ export class AppComponent {
   constructor(private resourceManager: ResourceManager, private zone: NgZone) {}
 
   public selectResource(path: string) {
-    if (this.loading) { this.loading.unsubscribe(); }
+    if (this.loading) {
+      this.loading.unsubscribe();
+    }
     this.error = null;
 
     this.loading = this.resourceManager.get(path).subscribe(
       this.runHack(resource => {
-        if (this.loading) { this.loading.unsubscribe(); }
+        if (this.loading) {
+          this.loading.unsubscribe();
+        }
 
         this.loading = null;
         this.resource = resource;
       }),
       error => {
-        if (this.loading) { this.loading.unsubscribe(); }
+        if (this.loading) {
+          this.loading.unsubscribe();
+        }
         this.loading = null;
         this.error = error.statusText;
       }

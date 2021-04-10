@@ -6,11 +6,13 @@ describe('ImageInspectorComponent', () => {
   let component: ImageInspectorComponent;
   let fixture: ComponentFixture<ImageInspectorComponent>;
 
-  beforeEach(waitForAsync(() => {
-    TestBed.configureTestingModule({
-      declarations: [ImageInspectorComponent]
-    }).compileComponents();
-  }));
+  beforeEach(
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        declarations: [ImageInspectorComponent]
+      }).compileComponents();
+    })
+  );
 
   beforeEach(() => {
     fixture = TestBed.createComponent(ImageInspectorComponent);

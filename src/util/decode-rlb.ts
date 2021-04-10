@@ -6,9 +6,7 @@ export default (input: InputStream, output: OutputStream): number => {
   while (!input.isAtEnd()) {
     const instruction = input.getUint8();
     const values =
-      instruction < 0x80
-        ? input.getUint8Array(instruction + 1)
-        : Array(1 + 0x100 - instruction).fill(input.getUint8());
+      instruction < 0x80 ? input.getUint8Array(instruction + 1) : Array(1 + 0x100 - instruction).fill(input.getUint8());
     output.writeUint8Array(values);
     bytesWritten += values.length;
   }

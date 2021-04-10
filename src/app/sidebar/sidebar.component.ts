@@ -3,13 +3,12 @@ import { faFolder } from '@fortawesome/free-regular-svg-icons';
 
 type Directory = { name: string; icon: any; files: string[] };
 
-const sort = (dir: Directory[]) => {
-  return dir.map(({ name, icon, files }) => ({
+const sort = (dir: Directory[]) =>
+  dir.map(({ name, icon, files }) => ({
     name,
     icon,
     files: files.sort((a, b) => a.localeCompare(b))
   }));
-};
 
 @Component({
   selector: 'app-sidebar',

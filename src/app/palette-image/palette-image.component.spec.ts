@@ -6,11 +6,13 @@ describe('PaletteImageComponent', () => {
   let component: PaletteImageComponent;
   let fixture: ComponentFixture<PaletteImageComponent>;
 
-  beforeEach(waitForAsync(() => {
-    TestBed.configureTestingModule({
-      declarations: [PaletteImageComponent]
-    }).compileComponents();
-  }));
+  beforeEach(
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        declarations: [PaletteImageComponent]
+      }).compileComponents();
+    })
+  );
 
   beforeEach(() => {
     fixture = TestBed.createComponent(PaletteImageComponent);

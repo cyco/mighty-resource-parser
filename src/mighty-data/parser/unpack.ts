@@ -1,11 +1,4 @@
-import {
-  InputStream,
-  OutputStream,
-  Stream,
-  decodeRLB,
-  decodeRLW,
-  decodeLZSS
-} from 'src/util';
+import { InputStream, OutputStream, Stream, decodeRLB, decodeRLW, decodeLZSS } from 'src/util';
 
 enum CompressionType {
   RLB = 0,

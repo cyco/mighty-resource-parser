@@ -6,11 +6,13 @@ describe('MapInspectorComponent', () => {
   let component: MapInspectorComponent;
   let fixture: ComponentFixture<MapInspectorComponent>;
 
-  beforeEach(waitForAsync(() => {
-    TestBed.configureTestingModule({
-      declarations: [MapInspectorComponent]
-    }).compileComponents();
-  }));
+  beforeEach(
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        declarations: [MapInspectorComponent]
+      }).compileComponents();
+    })
+  );
 
   beforeEach(() => {
     fixture = TestBed.createComponent(MapInspectorComponent);

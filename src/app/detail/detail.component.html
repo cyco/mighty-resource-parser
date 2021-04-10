@@ -1,10 +1,28 @@
-<h1><span><fa-icon [icon]="fileIcon"></fa-icon>{{resource.path}}</span><a *ngIf="canDownload" (click)="download()"><fa-icon [icon]="saveIcon"></fa-icon></a></h1>
+<h1>
+  <span><fa-icon [icon]="fileIcon"></fa-icon>{{ resource.path }}</span
+  ><a *ngIf="canDownload" (click)="download()"><fa-icon [icon]="saveIcon"></fa-icon></a>
+</h1>
 <div [ngSwitch]="resource.type">
-	<app-image-inspector [image]="resource.contents" *ngSwitchCase="Models.Image"></app-image-inspector>
-	<app-map-inspector [map]="resource.contents" [resourceManager]="resourceManager" *ngSwitchCase="Models.Map"></app-map-inspector>
-	<span *ngSwitchCase="Models.Movie">Movie</span>
-	<app-shapesheet-inspector [shapesheet]="resource.contents" [resourceManager]="resourceManager" *ngSwitchCase="Models.ShapeSheet"></app-shapesheet-inspector>
-	<app-soundsheet-inspector [soundsheet]="resource.contents" *ngSwitchCase="Models.SoundSheet"></app-soundsheet-inspector>
-	<app-tileset-inspector [tileset]="resource.contents" [resourceManager]="resourceManager" *ngSwitchCase="Models.TileSheet"></app-tileset-inspector>
-	<span *ngSwitchCase="Models.Unknown">Unknown</span>
+  <app-image-inspector [image]="resource.contents" *ngSwitchCase="Models.Image"></app-image-inspector>
+  <app-map-inspector
+    [map]="resource.contents"
+    [resourceManager]="resourceManager"
+    *ngSwitchCase="Models.Map"
+  ></app-map-inspector>
+  <span *ngSwitchCase="Models.Movie">Movie</span>
+  <app-shapesheet-inspector
+    [shapesheet]="resource.contents"
+    [resourceManager]="resourceManager"
+    *ngSwitchCase="Models.ShapeSheet"
+  ></app-shapesheet-inspector>
+  <app-soundsheet-inspector
+    [soundsheet]="resource.contents"
+    *ngSwitchCase="Models.SoundSheet"
+  ></app-soundsheet-inspector>
+  <app-tileset-inspector
+    [tileset]="resource.contents"
+    [resourceManager]="resourceManager"
+    *ngSwitchCase="Models.TileSheet"
+  ></app-tileset-inspector>
+  <span *ngSwitchCase="Models.Unknown">Unknown</span>
 </div>

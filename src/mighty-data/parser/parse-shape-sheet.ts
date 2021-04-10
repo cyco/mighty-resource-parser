@@ -26,15 +26,10 @@ const parseShape = (input: InputStream, base: number): Shape => {
   const pixelShift = input.getInt16();
   const relativePixelOffset = input.getInt16();
   const pixelOffset =
-    base +
-    relativePixelOffset +
-    (relativePixelOffset < 0 ? (pixelShift + 1) << 16 : pixelShift << 16);
+    base + relativePixelOffset + (relativePixelOffset < 0 ? (pixelShift + 1) << 16 : pixelShift << 16);
   const maskShift = input.getInt16();
   const relativeMaskOffset = input.getInt16();
-  const maskOffset =
-    base +
-    relativeMaskOffset +
-    (relativeMaskOffset < 0 ? (maskShift + 1) << 16 : maskShift << 16);
+  const maskOffset = base + relativeMaskOffset + (relativeMaskOffset < 0 ? (maskShift + 1) << 16 : maskShift << 16);
   const offset = input.offset;
   const size = shape.width * shape.height;
   input.seek(pixelOffset, Stream.Seek.Set);
@@ -42,7 +37,9 @@ const parseShape = (input: InputStream, base: number): Shape => {
   if (maskShift != 0) {
     input.seek(maskOffset, Stream.Seek.Set);
     shape.mask = input.getUint8Array(size);
-  } else { shape.mask = new Uint8Array(size); }
+  } else {
+    shape.mask = new Uint8Array(size);
+  }
   input.seek(offset, Stream.Seek.Set);
   return shape;
 };

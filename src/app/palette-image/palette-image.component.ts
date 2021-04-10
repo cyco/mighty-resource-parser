@@ -1,10 +1,4 @@
-import {
-  Component,
-  ElementRef,
-  ViewChild,
-  AfterViewInit,
-  Input
-} from '@angular/core';
+import { Component, ElementRef, ViewChild, AfterViewInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-palette-image',
@@ -32,13 +26,17 @@ export class PaletteImageComponent implements AfterViewInit {
   }
 
   ngOnChanges() {
-    if (!this.context) { return; }
+    if (!this.context) {
+      return;
+    }
     this.redraw();
   }
 
   private redraw() {
     const { width, height, pixels, palette, mask } = this;
-    if (!width || !height || !pixels || !palette) { return; }
+    if (!width || !height || !pixels || !palette) {
+      return;
+    }
 
     this.canvas.nativeElement.width = width;
     this.canvas.nativeElement.height = height;

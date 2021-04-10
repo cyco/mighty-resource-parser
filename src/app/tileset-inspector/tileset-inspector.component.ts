@@ -17,14 +17,14 @@ export class TilesetInspectorComponent implements OnChanges {
   private currentPaletteSource: string;
 
   ngOnChanges() {
-    if (!this.tileset) { return; }
+    if (!this.tileset) {
+      return;
+    }
     if (this.currentPaletteSource !== this.tileset.paletteSource) {
-      this.resourceManager
-        .get(this.tileset.paletteSource)
-        .subscribe(resource => {
-          this.currentPaletteSource = this.tileset.paletteSource;
-          this.palette = resource.contents.palette;
-        });
+      this.resourceManager.get(this.tileset.paletteSource).subscribe(resource => {
+        this.currentPaletteSource = this.tileset.paletteSource;
+        this.palette = resource.contents.palette;
+      });
     }
   }
 }

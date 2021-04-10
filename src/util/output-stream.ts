@@ -26,20 +26,12 @@ class OutputStream extends Stream {
   }
 
   public writeUint16(value: number): void {
-    this._dataView.setUint16(
-      this._offset,
-      value,
-      this.endianess === Stream.Endian.Little
-    );
+    this._dataView.setUint16(this._offset, value, this.endianess === Stream.Endian.Little);
     this._offset += Uint16Array.BYTES_PER_ELEMENT;
   }
 
   public writeUint32(value: number): void {
-    this._dataView.setUint32(
-      this._offset,
-      value,
-      this.endianess === Stream.Endian.Little
-    );
+    this._dataView.setUint32(this._offset, value, this.endianess === Stream.Endian.Little);
     this._offset += Uint32Array.BYTES_PER_ELEMENT;
   }
 
@@ -49,20 +41,12 @@ class OutputStream extends Stream {
   }
 
   public writeInt16(value: number): void {
-    this._dataView.setInt16(
-      this._offset,
-      value,
-      this.endianess === Stream.Endian.Little
-    );
+    this._dataView.setInt16(this._offset, value, this.endianess === Stream.Endian.Little);
     this._offset += Uint16Array.BYTES_PER_ELEMENT;
   }
 
   public writeInt32(value: number): void {
-    this._dataView.setInt32(
-      this._offset,
-      value,
-      this.endianess === Stream.Endian.Little
-    );
+    this._dataView.setInt32(this._offset, value, this.endianess === Stream.Endian.Little);
     this._offset += Uint32Array.BYTES_PER_ELEMENT;
   }
 

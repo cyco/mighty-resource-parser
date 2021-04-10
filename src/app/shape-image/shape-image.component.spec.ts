@@ -6,11 +6,13 @@ describe('ShapeImageComponent', () => {
   let component: ShapeImageComponent;
   let fixture: ComponentFixture<ShapeImageComponent>;
 
-  beforeEach(waitForAsync(() => {
-    TestBed.configureTestingModule({
-      declarations: [ShapeImageComponent]
-    }).compileComponents();
-  }));
+  beforeEach(
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        declarations: [ShapeImageComponent]
+      }).compileComponents();
+    })
+  );
 
   beforeEach(() => {
     fixture = TestBed.createComponent(ShapeImageComponent);

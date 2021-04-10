@@ -11,16 +11,4 @@ import { Sound } from './sound';
 import { TileSheet } from './tile-sheet';
 import { Tile } from './tile';
 
-export {
-  Image,
-  Map,
-  Movie,
-  Palette,
-  ShapeSet,
-  ShapeSheet,
-  Shape,
-  SoundSheet,
-  Sound,
-  TileSheet,
-  Tile
-};
+export { Image, Map, Movie, Palette, ShapeSet, ShapeSheet, Shape, SoundSheet, Sound, TileSheet, Tile };

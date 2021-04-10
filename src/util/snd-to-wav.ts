@@ -1,21 +1,19 @@
 import InputStream from './input-stream';
 import OutputStream from './output-stream';
 import Stream from './stream';
-import {fault} from 'fault';
+import { fault } from 'fault';
 
 const { floor } = Math;
 
 function assert(expr: boolean, message: string, ...rest: any[]) {
-  if (!expr) { throw fault(message, ...rest); }
+  if (!expr) {
+    throw fault(message, ...rest);
+  }
 }
 
 // Ported to typescript from https://github.com/Hopper262/classic-mac-utils/blob/master/snd2wav.pl
-export default function sndToWav(
-  snd: ArrayBuffer | Uint8Array | string | SharedArrayBuffer
-): ArrayBuffer {
-  const input = new InputStream(
-    snd instanceof Uint8Array ? snd.slice().buffer : snd
-  );
+export default function sndToWav(snd: ArrayBuffer | Uint8Array | string | SharedArrayBuffer): ArrayBuffer {
+  const input = new InputStream(snd instanceof Uint8Array ? snd.slice().buffer : snd);
   input.endianess = Stream.Endian.Big;
 
   let opts: number;
@@ -35,11 +33,7 @@ export default function sndToWav(
   assert(input.getUint16() === 5, 'Only sampeld sound can be decoded');
 
   opts = input.getUint32();
-  assert(
-    opts === 0x80 || opts === 0xa0 || opts === 0x3a0,
-    'Unhandled options in %2x',
-    opts
-  );
+  assert(opts === 0x80 || opts === 0xa0 || opts === 0x3a0, 'Unhandled options in %2x', opts);
 
   assert(input.getUint16() === 1, 'Too many commands');
   assert(input.getUint16() === 0x8051, 'Not a buffer command');
@@ -54,11 +48,7 @@ export default function sndToWav(
   loopend = input.getUint32();
 
   sampleEncoding = input.getUint8();
-  assert(
-    sampleEncoding === 0,
-    'Non-standard sample encoding %02x encountered',
-    sampleEncoding
-  );
+  assert(sampleEncoding === 0, 'Non-standard sample encoding %02x encountered', sampleEncoding);
 
   baseFrequency = input.getUint8();
   assert(

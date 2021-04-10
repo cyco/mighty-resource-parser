@@ -8,14 +8,4 @@ import OutputStream from './output-stream';
 import sndToWav from './snd-to-wav';
 import Stream from './stream';
 
-export {
-  decodeLZSS,
-  decodeRLB,
-  decodeRLW,
-  download,
-  downloadImage,
-  InputStream,
-  OutputStream,
-  sndToWav,
-  Stream
-};
+export { decodeLZSS, decodeRLB, decodeRLW, download, downloadImage, InputStream, OutputStream, sndToWav, Stream };
