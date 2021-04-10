@@ -1,4 +1,4 @@
-<h1><fa-icon [icon]="fileIcon"></fa-icon>{{resource.path}}</h1>
+<h1><span><fa-icon [icon]="fileIcon"></fa-icon>{{resource.path}}</span><a *ngIf="canDownload" (click)="download()"><fa-icon [icon]="saveIcon"></fa-icon></a></h1>
 <div [ngSwitch]="resource.type">
 	<app-image-inspector [image]="resource.contents" *ngSwitchCase="Models.Image"></app-image-inspector>
 	<app-map-inspector [map]="resource.contents" [resourceManager]="resourceManager" *ngSwitchCase="Models.Map"></app-map-inspector>

@@ -3,14 +3,14 @@
 
 body,
 html {
-	margin: 0;
-	padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 * {
-	box-sizing: border-box;
-	user-select: none;
-	cursor: default;
+  box-sizing: border-box;
+  user-select: none;
+  cursor: default;
 }
 
 input:not([type]),
@@ -20,10 +20,11 @@ input[type="search"],
 textarea,
 [contenteditable],
 [contenteditable] * {
-	user-select: text;
-	cursor: initial;
+  user-select: text;
+  cursor: initial;
 }
 
-a {
-	cursor: default;
+a,
+a * {
+  cursor: pointer;
 }

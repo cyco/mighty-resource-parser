@@ -1,7 +1,8 @@
 import { Component, Input } from '@angular/core';
 import { ResourceManager } from 'src/mighty-data/resource-manager';
 import * as Models from 'src/mighty-data/models';
-import { faFile } from '@fortawesome/free-regular-svg-icons';
+import { faFile, faSave } from '@fortawesome/free-regular-svg-icons';
+import {SerializerService} from 'src/app/serializer.service';
 
 @Component({
   selector: 'app-detail',
@@ -15,4 +16,15 @@ export class DetailComponent {
   @Input()
   public resource: any;
   public fileIcon: any = faFile;
+  public saveIcon: any = faSave;
+
+  constructor(private serializer: SerializerService) {}
+
+  download() {
+    this.serializer.download(this.resource);
+  }
+
+  public get canDownload(): boolean {
+    return this.serializer.canSerialize(this.resource);
+  }
 }
