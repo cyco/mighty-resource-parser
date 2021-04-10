@@ -59,5 +59,10 @@
       ],
       "rules": {}
     }
-  ]
+  ],
+    "extends": ["plugin:@typescript-eslint/recommended", "plugin:prettier/recommended"],
+    "plugins": ["eslint-plugin-react", "only-warn"],
+  "rules": {
+    "prettier/prettier": "warn"
+  }
 }
