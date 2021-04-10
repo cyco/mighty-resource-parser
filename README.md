@@ -1,15 +1,17 @@
-# Mighty Resource Viewer
+Mighty Resource Viewer
+======================
 
-A web app used to unpack and preview the game files used by _Power Pete_ and _Mighty Mike_.
+A web app used to unpack and preview the game files used by *Power Pete* and *Mighty Mike*.
 
-## Instructions
+Instructions
+------------
 
 ```sh
 # Clone repository
 $ git clone https://github.com/cyco/mighty-resource-parser.git
 
 # Install dependencies
-$ cd mighty-resource-viewer
+$ cd mighty-resource-parser
 $ yarn install
 
 # Start local server
@@ -19,15 +21,17 @@ $ yarn start
 # and navigate to http://localhost:4200/ in your browser
 ```
 
-## To do list
+To do list
+----------
 
--   [ ] Convert compressed `snd` resources to a playable format
-    -   See <https://ffmpeg.org/doxygen/3.1/mace_8c_source.html> for an implementation of the MACE 3:1 algorithm used to compress the music tracks and some sound effects
--   [ ] Show items in map viewer
--   [ ] Decode tile animations and add a way to preview them
--   [ ] Implement LZSS to unpack the spin animation
+-	[ ] Convert compressed `snd` resources to a playable format
+	-	See https://ffmpeg.org/doxygen/3.1/mace_8c_source.html for an implementation of the MACE 3:1 algorithm used to compress the music tracks and some sound effects
+-	[ ] Show items in map viewer
+-	[ ] Decode tile animations and add a way to preview them
+-	[ ] Implement LZSS to unpack the spin animation
 
-## Screenshots
+Screenshots
+-----------
 
 ![](./docs/audio.png)
 
