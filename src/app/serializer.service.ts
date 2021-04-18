@@ -12,15 +12,22 @@ export class SerializerService {
   constructor(private resourceManager: ResourceManager) {}
 
   public canSerialize(resource: Resource): boolean {
-    return resource.type === TileSheet || resource.type === ShapeSheet || resource.type === Map;
+    return (
+      resource.type === TileSheet || resource.type === ShapeSheet || resource.type === Map || resource.type === Image
+    );
   }
 
   public async download(resource: Resource): Promise<void> {
     if (resource.type === TileSheet) {
       await this.downloadTilesheet(resource);
     }
+
     if (resource.type === ShapeSheet) {
       await this.downloadShapeSheet(resource);
+    }
+
+    if (resource.type === Image) {
+      await this.downloadImage(resource);
     }
 
     if (resource.type === Map) {
@@ -127,6 +134,25 @@ export class SerializerService {
     const name = resource.path.split('/')[1].split('.')[0];
     const level = resource.path.split('-')[1];
     downloadImage(image, `${name}-${level}-map.png`, 'png');
+  }
+
+  private async downloadImage(resource: Resource): Promise<void> {
+    const image = resource.contents as Image;
+
+    const result = new ImageData(image.width, image.height);
+    const buffer = new ArrayBuffer(result.data.length);
+    const byteArray = new Uint8Array(buffer);
+    const data = new Uint32Array(buffer);
+
+    for (let ty = 0; ty < image.height; ty++) {
+      for (let tx = 0; tx < image.width; tx++) {
+        data[ty * image.width + tx] = image.palette[image.pixels[ty * image.width + tx]];
+      }
+    }
+    result.data.set(byteArray);
+
+    const name = resource.path.split('/')[1].split('.')[0];
+    downloadImage(result, `${name}.png`, 'png');
   }
 
   public async drawMapImage(map: Map): Promise<ImageData> {
