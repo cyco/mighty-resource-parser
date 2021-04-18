@@ -21,6 +21,8 @@ $ yarn start
 # and navigate to http://localhost:4200/ in your browser
 ```
 
+When you're done press `CTRL` and `c` together to stop the server.
+
 To do list
 ----------
 
