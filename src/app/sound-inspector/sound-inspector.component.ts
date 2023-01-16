@@ -1,5 +1,5 @@
 import { Component, Input, ViewChild, ElementRef, AfterViewInit, OnDestroy } from '@angular/core';
-import * as WaveSurfer from 'wavesurfer.js';
+import WaveSurfer from 'wavesurfer.js';
 import { sndToWav, download } from 'src/util';
 
 @Component({

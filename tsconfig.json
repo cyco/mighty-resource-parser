@@ -10,15 +10,11 @@
     "module": "es2020",
     "moduleResolution": "node",
     "importHelpers": true,
-    "target": "es2015",
-    "typeRoots": [
-      "node_modules/@types"
-    ],
+    "useDefineForClassFields": true,
+    "target": "es2020",
+    "typeRoots": ["node_modules/@types"],
     "allowSyntheticDefaultImports": true,
-    "lib": [
-      "es2018",
-      "dom"
-    ]
+    "lib": ["es2020", "dom"]
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,

@@ -14,7 +14,7 @@ export class AppComponent {
   public resource: Resource = null;
   public error: string = null;
 
-  constructor(private resourceManager: ResourceManager, private zone: NgZone) {}
+  constructor(public resourceManager: ResourceManager, private zone: NgZone) {}
 
   public selectResource(path: string) {
     if (this.loading) {
