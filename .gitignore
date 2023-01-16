@@ -45,5 +45,8 @@ testem.log
 .DS_Store
 Thumbs.db
 
+# Angualr
+.angular
+
 # Game Assets
 src/assets/Data
